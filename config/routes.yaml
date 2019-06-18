@@ -12,9 +12,9 @@ index_motd:
 
 
 
-blog_category:
+blog_featured_blogs:
   path: /blog
-  controller: App\Controller\BlogController::categories
+  controller: App\Controller\BlogController::featuredBlogs
 
 
 app_lucky_number:

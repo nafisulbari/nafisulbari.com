@@ -1,4 +1,4 @@
-{% extends 'base.html.twig'%}
+{% extends 'base.html.twig' %}
 
 {% block body %}
 
@@ -6,8 +6,16 @@
     </br>
 
     <h2>Category</h2>
+    </br>
 
-    <p>{{ cat }}</p>
-
+    <h2>Featured Blogs</h2>
+    <ul>
+        {% for  blog in blogs %}
+            <li> {{ blog.id }}</li>
+            <li> {{ blog.title }}</li>
+            <li> {{ blog.article }}</li>
+            </br>
+        {% endfor %}
+    </ul>
 
 {% endblock %}
