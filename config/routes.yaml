@@ -11,10 +11,10 @@ index_motd:
   controller: App\Controller\IndexController::motd
 
 
-
 blog_featured_blogs:
   path: /blog
   controller: App\Controller\BlogController::featuredBlogs
+
 
 
 app_lucky_number:

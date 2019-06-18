@@ -24,6 +24,11 @@ class Blogpost
     /**
      * @ORM\Column(type="string", length=255)
      */
+    private $category;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
     private $date_created;
 
     /**
@@ -44,6 +49,18 @@ class Blogpost
     public function setTitle(string $title): self
     {
         $this->title = $title;
+
+        return $this;
+    }
+
+    public function getCategory(): ?string
+    {
+        return $this->category;
+    }
+
+    public function setCategory(string $category): self
+    {
+        $this->category = $category;
 
         return $this;
     }
