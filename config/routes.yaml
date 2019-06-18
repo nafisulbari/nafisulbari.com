@@ -5,6 +5,18 @@
 
 
 # the "app_lucky_number" route name is not important yet
+
+index_motd:
+  path: /
+  controller: App\Controller\IndexController::motd
+
+
+
+blog_category:
+  path: /blog
+  controller: App\Controller\BlogController::categories
+
+
 app_lucky_number:
   path: /lucky
   controller: App\Controller\LuckyController::number
