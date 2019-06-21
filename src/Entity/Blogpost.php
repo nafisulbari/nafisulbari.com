@@ -21,10 +21,6 @@ class Blogpost
      */
     private $title;
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $category;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -35,6 +31,13 @@ class Blogpost
      * @ORM\Column(type="text")
      */
     private $article;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\category", inversedBy="blogpost")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $category;
+
 
     public function getId(): ?int
     {
@@ -53,17 +56,6 @@ class Blogpost
         return $this;
     }
 
-    public function getCategory(): ?string
-    {
-        return $this->category;
-    }
-
-    public function setCategory(string $category): self
-    {
-        $this->category = $category;
-
-        return $this;
-    }
 
     public function getDateCreated(): ?string
     {
@@ -88,4 +80,17 @@ class Blogpost
 
         return $this;
     }
+
+    public function getCategory(): ?category
+    {
+        return $this->category;
+    }
+
+    public function setCategory(?category $category): self
+    {
+        $this->category = $category;
+
+        return $this;
+    }
+
 }

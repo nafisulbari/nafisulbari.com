@@ -20,6 +20,7 @@ class BlogController extends AbstractController {
 
         $repository = $this->getDoctrine()->getRepository(Blogpost::class);
         $featuredBlogs = $repository->findAll();
+
         $cats = $repository->createQueryBuilder('p');
         $c = $cats->select('p.category')->distinct()->getQuery()->getResult();
 
