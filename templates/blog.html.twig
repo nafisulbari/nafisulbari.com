@@ -2,10 +2,16 @@
 
 {% block body %}
 
-    <h1>Blogs page</h1>
+    <h1>Blog page</h1>
     </br>
-
-
+    <h2>Categories</h2>
+    <ul>
+        {% for  c in cats %}
+            <li> {{ c.category }}</li>
+            </br>
+        {% endfor %}
+    </ul>
+    </br>
 
     <h2>Featured Blogs</h2>
     <ul>

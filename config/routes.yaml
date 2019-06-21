@@ -11,10 +11,14 @@ index_motd:
   controller: App\Controller\IndexController::motd
 
 
-blog_featured_blogs:
+blog_page:
   path: /blog
-  controller: App\Controller\BlogController::featuredBlogs
+  controller: App\Controller\BlogController::blogPage
 
+
+blog_show:
+  path: /blog/post/{id}
+  controller: App\Controller\BlogPostController::show
 
 
 app_lucky_number:
