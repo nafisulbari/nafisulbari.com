@@ -33,7 +33,7 @@ class Blogpost
     private $article;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\category", inversedBy="blogpost")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Category", inversedBy="blogpost")
      * @ORM\JoinColumn(nullable=false)
      */
     private $category;

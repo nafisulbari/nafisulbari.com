@@ -5,6 +5,7 @@ namespace App\Controller;
 
 
 use App\Entity\Blogpost;
+use App\Entity\Category;
 use App\Repository\BlogpostRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Doctrine\ORM\Query\ResultSetMapping;
@@ -21,11 +22,17 @@ class BlogController extends AbstractController {
         $repository = $this->getDoctrine()->getRepository(Blogpost::class);
         $featuredBlogs = $repository->findAll();
 
-        $cats = $repository->createQueryBuilder('p');
-        $c = $cats->select('p.category')->distinct()->getQuery()->getResult();
+
+        $repository = $this->getDoctrine()->getRepository(Category::class);
+
+        $cats = $repository->findAll();
 
 
-        return $this->render('blog.html.twig', ['blogs' => $featuredBlogs, 'cats' => $c]);
+//        $cats = $repository->createQueryBuilder('c');
+//        $c = $cats->select('c.category')->distinct()->getQuery()->getResult();
+
+
+        return $this->render('blog.html.twig', ['blogs' => $featuredBlogs, 'cats' => $cats]);
     }
 
 

@@ -6,8 +6,8 @@
     </br>
     <h2>Categories</h2>
     <ul>
-        {% for  c in cats %}
-            <li> {{ c.category }}</li>
+        {% for  cat in cats %}
+            <li> {{ cat.name }}</li>
             </br>
         {% endfor %}
     </ul>
@@ -17,7 +17,7 @@
     <ul>
         {% for  blog in blogs %}
             <li> {{ blog.id }}</li>
-            <li> {{ blog.category }}</li>
+            <li> {{ blog.category.name }}</li>
             <li> {{ blog.title }}</li>
             <li> {{ blog.article }}</li>
             </br>
