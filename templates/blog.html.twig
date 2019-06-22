@@ -14,14 +14,12 @@
     </br>
 
     <h2>Featured Blogs</h2>
-    <ul>
-        {% for  blog in blogs %}
+    {% for  blog in blogs %}
+        <ul>
             <li> {{ blog.id }}</li>
             <li> {{ blog.category.name }}</li>
-            <li> {{ blog.title }}</li>
+            <li><a href="blog/post/{{ blog.id }}">{{ blog.title }}</a></li>
             <li> {{ blog.article }}</li>
-            </br>
-        {% endfor %}
-    </ul>
-
+        </ul>
+    {% endfor %}
 {% endblock %}
