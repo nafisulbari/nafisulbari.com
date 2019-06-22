@@ -3,30 +3,44 @@
 namespace App\Controller;
 
 use App\Entity\Blogpost;
+use App\Entity\Category;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Faker;
 
 
 class BlogPostController extends AbstractController {
+
     /**
      * @Route("/blog/post", name="blog_post")
      */
     public function createPost(): Response {
-        // you can fetch the EntityManager via $this->getDoctrine()
-        // or you can add an argument to the action: createProduct(EntityManagerInterface $entityManager)
+
         $entityManager = $this->getDoctrine()->getManager();
 
         $blogpost = new Blogpost();
-        $blogpost->setTitle('ssd brah');
-        $blogpost->setCategory('science');
-        $blogpost->setDateCreated(6969);
-        $blogpost->setArticle('79 Nigga byte stuff');
 
-        // tell Doctrine you want to (eventually) save the Product (no queries yet)
+
+        $faker = Faker\Factory::create();
+
+
+        $category = $this->getDoctrine()->getRepository(Category::class)->find($faker->numberBetween($min = 1, $max = 3));
+
+
+
+
+        $blogpost->setTitle($faker->sentence($nbWords = 6, $variableNbWords = true));
+        $blogpost->setDateCreated(6969);
+        $blogpost->setCategory($category);
+        $blogpost->setArticle($faker->paragraph($nbSentences = $faker->numberBetween($min = 10, $max = 150), $variableNbSentences = true));
+
+
+
+
+        $entityManager->persist($category);
         $entityManager->persist($blogpost);
 
-        // actually executes the queries (i.e. the INSERT query)
         $entityManager->flush();
 
         return new Response('Saved new product with id ' . $blogpost->getId());
