@@ -3,15 +3,16 @@
 {% block body %}
 
     <h1>Blog page</h1>
-    </br>
+
     <h2>Categories</h2>
     <ul>
         {% for  cat in cats %}
-            <li> {{ cat.name }}</li>
-            </br>
+            <li><a href="/blogs/{{ cat.id }}">{{ cat.name }}</a></li>
+
+
+
         {% endfor %}
     </ul>
-    </br>
 
     <h2>Featured Blogs</h2>
     {% for  blog in blogs %}
