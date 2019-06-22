@@ -18,21 +18,26 @@ class BlogController extends AbstractController {
 
     public function blogPage() {
 
-
         $repository = $this->getDoctrine()->getRepository(Blogpost::class);
         $featuredBlogs = $repository->findAll();
 
 
         $repository = $this->getDoctrine()->getRepository(Category::class);
-
         $cats = $repository->findAll();
 
 
 //        $cats = $repository->createQueryBuilder('c');
 //        $c = $cats->select('c.category')->distinct()->getQuery()->getResult();
 
-
         return $this->render('blog.html.twig', ['blogs' => $featuredBlogs, 'cats' => $cats]);
+    }
+
+    public function blogsWithCategory($id) {
+
+        $repository = $this->getDoctrine()->getRepository(Category::class);
+        $blogs = $repository->find($id)->getBlogpost();
+
+        return $this->render('blogs.html.twig', ['blogs' => $blogs]);
     }
 
 
