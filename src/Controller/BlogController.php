@@ -16,8 +16,11 @@ class BlogController extends AbstractController {
     public function blogPage() {
 
         $repository = $this->getDoctrine()->getRepository(Blogpost::class);
-        $featuredBlogs = $repository->findAll();
-
+        $featuredBlogs = $repository->findBy(
+            array(),
+            array('id' => 'DESC'),
+            5
+        );
 
         $repository = $this->getDoctrine()->getRepository(Category::class);
         $cats = $repository->findAll();
