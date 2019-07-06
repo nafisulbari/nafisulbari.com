@@ -13,7 +13,6 @@
         "symfony/dotenv": "4.3.*",
         "symfony/flex": "^1.1",
         "symfony/framework-bundle": "4.3.*",
-        "symfony/maker-bundle": "^1.11",
         "symfony/orm-pack": "^1.0",
         "symfony/twig-bundle": "4.3.*",
         "symfony/yaml": "4.3.*"
@@ -64,6 +63,7 @@
         }
     },
     "require-dev": {
+        "symfony/maker-bundle": "^1.11",
         "symfony/profiler-pack": "^1.0"
     }
 }
