@@ -3,14 +3,18 @@
 namespace App\Controller;
 
 
+use App\Entity\Category;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-
 class DashboardController extends AbstractController {
 
     public function dashboard() {
 
-        $number = random_int(0, 100);
+        $repository = $this->getDoctrine()->getRepository(Category::class);
+        $cats = $repository->findAll();
 
-        return $this->render('dashboard/dashboard.html.twig', ['number' => $number,]);
+        return $this->render('dashboard/dashboard.html.twig', ['cats' => $cats,]);
     }
+
+
+
 }

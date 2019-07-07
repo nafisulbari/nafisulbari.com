@@ -37,7 +37,6 @@ class BlogController extends AbstractController {
         $em = $this->getDoctrine()->getManager();
         $blogsOfCatRepo = $em->getRepository(Blogpost::class);
 
-
         $allBlogsOfCatQuerry = $blogsOfCatRepo->createQueryBuilder('c')
             ->where('c.category = :id')
             ->setParameter('id', $id)
@@ -48,14 +47,6 @@ class BlogController extends AbstractController {
             $request->query->getInt('page', 1),
             5
         );
-
-
-
-
-
-
-
-
 
         return $this->render('blogs.html.twig', ['blogs' => $blogs]);
     }

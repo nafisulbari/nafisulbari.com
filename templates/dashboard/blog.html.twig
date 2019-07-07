@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <h1>My blogs</h1>
+
+    <h2>Categories</h2>
+
+
+
+    <h2>Blogs with category</h2>
+    {% for  blog in blogs %}
+        <ul>
+            <li> {{ blog.id }}</li>
+
+            <li><a href="/dashboard/category/blog/post/{{ blog.id }}">{{ blog.title }}</a></li>
+
+        </ul>
+    {% endfor %}
+
+
+
+
+
+
+
+
+{% endblock %}
+
+

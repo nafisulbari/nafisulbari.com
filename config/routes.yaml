@@ -29,6 +29,14 @@ dashboard:
     path: /dashboard
     controller: App\Controller\DashboardController::dashboard
 
+dashboard_category_blog:
+  path: /dashboard/category/blog/{id}
+  controller: App\Controller\DashboardBlogController::dashBlogsWithcategory
+
+dashboard_blog_show:
+  path: /dashboard/category/blog/post/{id}
+  controller: App\Controller\DashboardBlogController::show
+
 app_lucky_number:
   path: /lucky
   controller: App\Controller\LuckyController::number
