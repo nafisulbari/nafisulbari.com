@@ -19,13 +19,14 @@ security:
                 login_path: login
                 check_path: login
                 provider: my_provider
+                target_path_parameter: go_to
 
             logout:
                 path: /logout
-                target: /
+                target: /login
 
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used
     access_control:
         # - { path: ^/admin, roles: ROLE_ADMIN }
-        # - { path: ^/profile, roles: ROLE_USER }
+         - { path: ^/dashboard, roles: ROLE_USER }

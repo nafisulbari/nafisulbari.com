@@ -20,6 +20,7 @@
     
     <form action="{{ path('login') }}" method="POST">
 
+        <input type="hidden" name="go_to" value="{{ path('dashboard') }}"/>
         <input type="text" name="_username" value="{{ last_username }}" placeholder="email here...">
         <input type="password" name="_password">
 

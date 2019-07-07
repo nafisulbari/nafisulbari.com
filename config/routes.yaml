@@ -25,6 +25,10 @@ blog_show:
   controller: App\Controller\BlogPostController::show
 
 
+dashboard:
+    path: /dashboard
+    controller: App\Controller\DashboardController::dashboard
+
 app_lucky_number:
   path: /lucky
   controller: App\Controller\LuckyController::number
