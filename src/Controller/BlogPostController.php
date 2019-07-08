@@ -21,22 +21,14 @@ class BlogPostController extends AbstractController {
 
         $blogpost = new Blogpost();
 
-
         $faker = Faker\Factory::create();
 
-
         $category = $this->getDoctrine()->getRepository(Category::class)->find($faker->numberBetween($min = 1, $max = 3));
-
-
-
 
         $blogpost->setTitle($faker->sentence($nbWords = 6, $variableNbWords = true));
         $blogpost->setDateCreated(6969);
         $blogpost->setCategory($category);
         $blogpost->setArticle($faker->paragraph($nbSentences = $faker->numberBetween($min = 10, $max = 150), $variableNbSentences = true));
-
-
-
 
         $entityManager->persist($category);
         $entityManager->persist($blogpost);

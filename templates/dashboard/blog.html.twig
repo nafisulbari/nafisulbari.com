@@ -8,12 +8,14 @@
 
 
 
-    <h2>Blogs with category</h2>
+    <h2>Blogs with category XXX</h2>
     {% for  blog in blogs %}
         <ul>
             <li> {{ blog.id }}</li>
 
             <li><a href="/dashboard/category/blog/post/{{ blog.id }}">{{ blog.title }}</a></li>
+            <button><a href="/blog/post/{{ blog.id }}" target="_blank">preview</a></button>
+            <button><a href="/dashboard/category/blog/post/edit/{{ blog.id }}">edit</a></button>
 
         </ul>
     {% endfor %}

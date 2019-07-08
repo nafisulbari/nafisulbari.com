@@ -9,7 +9,6 @@ class DashboardBlogController extends AbstractController {
 
     public function dashBlogsWithCategory($id) {
 
-
         $em = $this->getDoctrine()->getManager();
         $blogsOfCatRepo = $em->getRepository(Blogpost::class);
 
@@ -39,5 +38,20 @@ class DashboardBlogController extends AbstractController {
 
 
         return $this->render('/dashboard/blogpost.html.twig', ['blogpost' => $blogpost]);
+    }
+
+    public function editBlog($id){
+        $blogpost = $this->getDoctrine()
+            ->getRepository(Blogpost::class)
+            ->find($id);
+
+        if (!$blogpost) {
+            throw $this->createNotFoundException(
+                'No blogs found for id ' . $id
+            );
+        }
+
+
+        return $this->render('/dashboard/editblog.html.twig', ['blogpost' => $blogpost]);
     }
 }
