@@ -1,6 +1,11 @@
 {% extends 'base.html.twig' %}
 
-{% block title %} DashboardBlogController!{% endblock %}
+
+
+{% block tinymce %}
+    <script src="https://cdn.tiny.cloud/1/0mfdsilngywfygs9tbl0b40723kmi9tidztyrtr534whm93a/tinymce/5/tinymce.min.js"></script>
+    <script>tinymce.init({selector:'textarea'});</script>
+{% endblock %}
 
 {% block body %}
     <style>
@@ -25,7 +30,7 @@
 
         <ul>
 
-            <li><p> {{ blogpost.article }}</p>
+            <li><p>   <textarea>{{ blogpost.article }}</textarea></p>
 
             </li>
         </ul>
