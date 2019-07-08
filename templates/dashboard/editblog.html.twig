@@ -23,17 +23,25 @@
     </style>
 
     <div class="example-wrapper">
+
+
         {{ blogpost.id }}
         <h1> {{ blogpost.title }}</h1>
         <p> {{ blogpost.category.name }}</p>
         <p> {{ blogpost.dateCreated }}</p>
 
-        <ul>
 
-            <li><p>   <textarea>{{ blogpost.article }}</textarea></p>
 
-            </li>
-        </ul>
+
+
+        <form action="/dashboard/category/blog/post/edit/save/{{ blogpost.id }}" method="GET">
+            <textarea name="article" meth>{{ blogpost.article }}</textarea>
+
+            <input type="submit" value="SAVE">
+        </form>
+
+
+
     </div>
 
 

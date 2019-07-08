@@ -22,13 +22,8 @@
         <h1> {{ blogpost.title }}</h1>
         <p> {{ blogpost.category.name }}</p>
         <p> {{ blogpost.dateCreated }}</p>
+        <p> {{ blogpost.article | raw }}</p>
 
-        <ul>
-
-            <li><p> {{ blogpost.article }}</p>
-
-            </li>
-        </ul>
     </div>
 
 

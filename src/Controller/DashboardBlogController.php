@@ -4,6 +4,8 @@ namespace App\Controller;
 
 use App\Entity\Blogpost;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 class DashboardBlogController extends AbstractController {
 
@@ -51,7 +53,28 @@ class DashboardBlogController extends AbstractController {
             );
         }
 
+        return $this->render('/dashboard/editblog.html.twig', ['blogpost' => $blogpost]);
+    }
+
+    public function saveButton($id, Request $request){
+
+        $article = $request->query->get('article');
+
+
+        $blogpost= $this->getDoctrine()
+            ->getRepository(Blogpost::class)
+            ->find($id);
+
+        $blogpost->setArticle($article);
+
+        $entityManager = $this->getDoctrine()->getManager();
+
+        $entityManager->persist($blogpost);
+
+        $entityManager->flush();
+
 
         return $this->render('/dashboard/editblog.html.twig', ['blogpost' => $blogpost]);
+
     }
 }
