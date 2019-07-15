@@ -40,6 +40,7 @@ dashboard_blog_show:
 dashboard_blog_edit:
   path: /dashboard/category/blog/post/edit/{id}
   controller: App\Controller\DashboardBlogController::editBlog
+
 dashboard_blog_edit_save:
   path: /dashboard/category/blog/post/edit/save/{id}
   controller: App\Controller\DashboardBlogController::saveButton
