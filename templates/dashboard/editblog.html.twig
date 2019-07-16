@@ -4,7 +4,52 @@
 
 {% block tinymce %}
     <script src="https://cdn.tiny.cloud/1/0mfdsilngywfygs9tbl0b40723kmi9tidztyrtr534whm93a/tinymce/5/tinymce.min.js"></script>
-    <script>tinymce.init({selector:'textarea'});</script>
+    <script>
+
+        tinymce.init({
+            selector: 'textarea',
+            plugins: 'image code',
+            toolbar: 'bold italic underline strikethrough ' +
+                'alignleft aligncenter alignright alignjustify styleselect ' +
+                'bullist numlist outdent indent ' +
+                'undo redo removeformat subscript superscript | image code'
+
+            // without images_upload_url set, Upload tab won't show up
+            images_upload_url: 'src/ImageUploadHandler/upload.php',
+
+            // override default upload handler to simulate successful upload
+            images_upload_handler: function (blobInfo, success, failure) {
+                var xhr, formData;
+
+                xhr = new XMLHttpRequest();
+                xhr.withCredentials = false;
+                xhr.open('POST', 'App/ImageUploadHandler/upload.php');
+
+                xhr.onload = function() {
+                    var json;
+
+                    if (xhr.status != 200) {
+                        failure('HTTP Error: ' + xhr.status);
+                        return;
+                    }
+
+                    json = JSON.parse(xhr.responseText);
+
+                    if (!json || typeof json.location != 'string') {
+                        failure('Invalid JSON: ' + xhr.responseText);
+                        return;
+                    }
+
+                    success(json.location);
+                };
+
+                formData = new FormData();
+                formData.append('file', blobInfo.blob(), blobInfo.filename());
+
+                xhr.send(formData);
+            },
+        });
+    </script>
 {% endblock %}
 
 {% block body %}
@@ -31,15 +76,11 @@
         <p> {{ blogpost.dateCreated }}</p>
 
 
-
-
-
         <form action="/dashboard/category/blog/post/edit/save/{{ blogpost.id }}" method="GET">
-            <textarea name="article" meth>{{ blogpost.article }}</textarea>
+            <textarea name="article">{{ blogpost.article }}</textarea>
 
             <input type="submit" value="SAVE">
         </form>
-
 
 
     </div>
