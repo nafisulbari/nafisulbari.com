@@ -1,0 +1,34 @@
+{% extends 'base.html.twig'%}
+
+{% block body %}
+
+
+    <a href="/dashboard/category/create">Create category</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h2>Categories</h2>
+    <ul>
+        {% for  cat in cats %}
+            <li>{{ cat.name }}</li>
+            <button><a href="/dashboard/category/edit/{{ cat.id }}">edit</a></button>
+            <button class="btn btn-danger"><a href="/dashboard/category/delete/{{ cat.id }}" onclick="return confirm('Are you sure you want to delete this category?');">delete</a></button>
+
+
+        {% endfor %}
+    </ul>
+{% endblock %}

@@ -98,8 +98,6 @@ class DashboardBlogController extends AbstractController {
 
     public function createBlogPost(){
 
-
-
         $repository = $this->getDoctrine()->getRepository(Category::class);
         $cats = $repository->findAll();
 

@@ -29,6 +29,32 @@ dashboard:
     path: /dashboard
     controller: App\Controller\DashboardController::dashboard
 
+dashboard_category:
+    path: /dashboard/category/
+    controller: App\Controller\DashboardCategoryController::category
+
+dashboard_createCategory:
+  path: /dashboard/category/create
+  controller: App\Controller\DashboardCategoryController::createCategory
+
+dashboard_create_category_save:
+  path: /dashboard/category/create/save
+  controller: App\Controller\DashboardCategoryController::categorySaveButton
+
+dashboard_edit_category:
+  path: /dashboard/category/edit/{id}
+  controller: App\Controller\DashboardCategoryController::editCategory
+
+dashboard_edit_category_save:
+  path: /dashboard/category/edit/save/{id}
+  controller: App\Controller\DashboardCategoryController::editSaveButton
+
+dashboard_delete_category:
+  path: /dashboard/category/delete/{id}
+  controller: App\Controller\DashboardCategoryController::deleteCategoryButton
+
+
+
 dashboard_category_blog:
   path: /dashboard/category/blog/{id}
   controller: App\Controller\DashboardBlogController::dashBlogsWithcategory
