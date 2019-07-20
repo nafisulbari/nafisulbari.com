@@ -16,6 +16,10 @@ blog_page:
   controller: App\Controller\BlogController::blogPage
 
 
+blogs_search:
+  path: /blogs/search
+  controller: App\Controller\BlogController::search
+
 blogs_with_category:
   path: /blogs/{id}
   controller: App\Controller\BlogController::blogsWithCategory
@@ -23,6 +27,11 @@ blogs_with_category:
 blog_show:
   path: /blog/post/{id}
   controller: App\Controller\BlogPostController::show
+
+
+
+
+
 
 
 dashboard:

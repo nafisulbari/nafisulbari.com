@@ -52,4 +52,28 @@ class BlogController extends AbstractController {
     }
 
 
+
+    public function search(Request $request, PaginatorInterface $paginator) {
+
+        $term=$request->query->get('searchTerm');
+
+        $em = $this->getDoctrine()->getManager();
+        $repository = $em->getRepository(Blogpost::class);
+
+        $searchedBlogs = $repository->createQueryBuilder('b')
+            ->andWhere('b.title LIKE :searchTerm OR b.article LIKE :searchTerm')
+            ->setParameter('searchTerm', '%'.$term.'%')
+            ->getQuery();
+
+
+        $blogs = $paginator->paginate(
+            $searchedBlogs,
+            $request->query->getInt('page', 1),
+            5
+        );
+
+        return $this->render('search.html.twig', ['blogs' => $blogs]);
+    }
+
+
 }

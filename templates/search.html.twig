@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <h1>Blog Search</h1>
+
+
+    {% if blogs is empty %}
+    <p>no results found</p>
+    {% endif %}
+
+
+    {% for  blog in blogs %}
+        <ul>
+            <li> {{ blog.id }}</li>
+
+            <li><a href="/blog/post/{{ blog.id }}#disqus_thread">{{ blog.title }}</a></li>
+
+        </ul>
+    {% endfor %}
+
+
+
+
+    <div class="navigation">
+        {{ knp_pagination_render(blogs) }}
+    </div>
+{% endblock %}
+
+
