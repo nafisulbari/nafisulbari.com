@@ -42,7 +42,7 @@ class DashboardBlogController extends AbstractController {
         return $this->render('/dashboard/blogpost.html.twig', ['blogpost' => $blogpost]);
     }
 
-    public function editBlog($id){
+    public function editBlog($id, Request $request){
         $blogpost = $this->getDoctrine()
             ->getRepository(Blogpost::class)
             ->find($id);
@@ -52,6 +52,8 @@ class DashboardBlogController extends AbstractController {
                 'No blogs found for id ' . $id
             );
         }
+
+
 
         return $this->render('/dashboard/editblog.html.twig', ['blogpost' => $blogpost]);
     }
