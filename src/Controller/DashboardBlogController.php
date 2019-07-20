@@ -63,19 +63,16 @@ class DashboardBlogController extends AbstractController {
         return $this->render('/dashboard/editblog.html.twig', ['blogpost' => $blogpost, 'cats'=>$cats]);
     }
 
-    public function saveButton($id, Request $request){
+    public function editSaveButton($id, Request $request){
 
         $title = $request->query->get('title');
         $category_id = $request->query->get('category_id');
         $dateCreated = $request->query->get('dateCreated');
         $article = $request->query->get('article');
 
-
-
         $blogpost= $this->getDoctrine()
             ->getRepository(Blogpost::class)
             ->find($id);
-
 
         $blogpost->setTitle($title);
 
@@ -87,7 +84,6 @@ class DashboardBlogController extends AbstractController {
         $blogpost->setArticle($article);
 
 
-
         $entityManager = $this->getDoctrine()->getManager();
         $entityManager->persist($blogpost);
         $entityManager->flush();
@@ -95,8 +91,70 @@ class DashboardBlogController extends AbstractController {
         $repository = $this->getDoctrine()->getRepository(Category::class);
         $cats = $repository->findAll();
 
-
         return $this->render('/dashboard/editblog.html.twig', ['blogpost' => $blogpost, 'cats'=>$cats]);
 
     }
+
+
+    public function createBlogPost(){
+
+
+
+        $repository = $this->getDoctrine()->getRepository(Category::class);
+        $cats = $repository->findAll();
+
+
+        return $this->render('/dashboard/createblogpost.html.twig', ['cats'=>$cats]);
+    }
+
+    public function createBlogPostSaveButton(Request $request) {
+
+        $title = $request->query->get('title');
+        $category_id = $request->query->get('category_id');
+        $dateCreated = $request->query->get('dateCreated');
+        $article = $request->query->get('article');
+
+        $entityManager = $this->getDoctrine()->getManager();
+        $blogpost = new Blogpost();
+
+        $category = $this->getDoctrine()->getRepository(Category::class)->find($category_id);
+
+        $blogpost->setTitle($title);
+        $blogpost->setDateCreated($dateCreated);
+        $blogpost->setCategory($category);
+        $blogpost->setArticle($article);
+
+        $entityManager->persist($category);
+        $entityManager->persist($blogpost);
+
+        $entityManager->flush();
+
+        $redirectPath = '/dashboard/category/blog/post/edit/'.$blogpost->getId();
+
+        return $this->redirect($redirectPath,201,sleep(3));
+
+
+
+    }
+
+
+    public function deleteBlogpost($id){
+
+        $entityManager = $this->getDoctrine()->getManager();
+        $blogpost = $this->getDoctrine()->getRepository(Blogpost::class)->find($id);
+
+        $blogCat = $blogpost->getCategory();
+
+        $entityManager->remove($blogpost);
+        $entityManager->flush();
+
+        $redirectURL = '/dashboard/category/blog/'.$blogCat->getId();
+        return $this->redirect($redirectURL);
+
+    }
+
+
+
+
+
 }

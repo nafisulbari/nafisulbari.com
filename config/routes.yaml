@@ -41,14 +41,25 @@ dashboard_blog_edit:
   path: /dashboard/category/blog/post/edit/{id}
   controller: App\Controller\DashboardBlogController::editBlog
 
+dashboard_blog_delete:
+  path: /dashboard/category/blog/post/delete/{id}
+  controller: App\Controller\DashboardBlogController::deleteBlogpost
+
 dashboard_blog_image_upload:
   path: /dashboard/category/blog/post/edit/upload/{id}
   controller: App\Controller\DashboardImageUploadController::uploadImage
 
+dashboard_create_blog_post:
+  path: /dashboard/createblogpost
+  controller: App\Controller\DashboardBlogController::createBlogPost
+
+dashboard_create_blog_post_save:
+  path: /dashboard/createblogpost/save
+  controller: App\Controller\DashboardBlogController::createBlogPostSaveButton
 
 dashboard_blog_edit_save:
   path: /dashboard/category/blog/post/edit/save/{id}
-  controller: App\Controller\DashboardBlogController::saveButton
+  controller: App\Controller\DashboardBlogController::editSaveButton
 
 app_lucky_number:
   path: /lucky
