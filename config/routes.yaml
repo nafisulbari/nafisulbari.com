@@ -11,6 +11,7 @@ index_motd:
   controller: App\Controller\IndexController::motd
 
 
+#-----------------BLOG and BLOGS-------------------------------------------------------
 blog_page:
   path: /blog
   controller: App\Controller\BlogController::blogPage
@@ -33,7 +34,7 @@ blog_show:
 
 
 
-
+#-----------------DASHBOARD-------------------------------------------------------
 dashboard:
     path: /dashboard
     controller: App\Controller\DashboardController::dashboard
@@ -63,14 +64,18 @@ dashboard_delete_category:
   controller: App\Controller\DashboardCategoryController::deleteCategoryButton
 
 
-
 dashboard_category_blog:
   path: /dashboard/category/blog/{id}
   controller: App\Controller\DashboardBlogController::dashBlogsWithcategory
 
+
+
+
+#-----------------DASHBOARD BLOGS-------------------
 dashboard_blog_show:
   path: /dashboard/category/blog/post/{id}
   controller: App\Controller\DashboardBlogController::show
+
 
 dashboard_blog_edit:
   path: /dashboard/category/blog/post/edit/{id}
@@ -80,9 +85,6 @@ dashboard_blog_delete:
   path: /dashboard/category/blog/post/delete/{id}
   controller: App\Controller\DashboardBlogController::deleteBlogpost
 
-dashboard_blog_image_upload:
-  path: /dashboard/category/blog/post/edit/upload/{id}
-  controller: App\Controller\DashboardImageUploadController::uploadImage
 
 dashboard_create_blog_post:
   path: /dashboard/createblogpost
@@ -96,7 +98,12 @@ dashboard_blog_edit_save:
   path: /dashboard/category/blog/post/edit/save/{id}
   controller: App\Controller\DashboardBlogController::editSaveButton
 
-app_lucky_number:
-  path: /lucky
-  controller: App\Controller\LuckyController::number
+
+#-----------------IMAGE UPLOAD-------------------
+dashboard_blog_image_upload:
+  path: /dashboard/category/blog/post/edit/upload/{id}
+  controller: App\Controller\DashboardImageUploadController::uploadImage
+
+
+
 

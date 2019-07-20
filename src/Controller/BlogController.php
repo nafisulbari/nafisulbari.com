@@ -58,9 +58,9 @@ class BlogController extends AbstractController {
         $term=$request->query->get('searchTerm');
 
         $em = $this->getDoctrine()->getManager();
-        $repository = $em->getRepository(Blogpost::class);
+        $blogpostRepository = $em->getRepository(Blogpost::class);
 
-        $searchedBlogs = $repository->createQueryBuilder('b')
+        $searchedBlogs = $blogpostRepository->createQueryBuilder('b')
             ->andWhere('b.title LIKE :searchTerm OR b.article LIKE :searchTerm')
             ->setParameter('searchTerm', '%'.$term.'%')
             ->getQuery();

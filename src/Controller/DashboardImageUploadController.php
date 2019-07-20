@@ -14,7 +14,7 @@ class DashboardImageUploadController extends AbstractController {
         $file = $request->files->get('file');
         $dir = $request->server->get('DOCUMENT_ROOT') . '/assets/images';
 
-        $fileName = md5($file->getClientOriginalName()) . '.' . $file->guessExtension();
+        $fileName =md5($file->getClientOriginalName()) . '.' . $file->guessExtension();
         $file->move($dir, $fileName);
 
         $response = new JsonResponse();
