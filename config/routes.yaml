@@ -26,7 +26,7 @@ blogs_with_category:
   controller: App\Controller\BlogController::blogsWithCategory
 
 blog_show:
-  path: /blog/post/{id}
+  path: /blog/{id}
   controller: App\Controller\BlogPostController::show
 
 

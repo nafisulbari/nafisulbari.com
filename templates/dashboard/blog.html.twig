@@ -14,7 +14,7 @@
             <li> {{ blog.id }}</li>
 
             <li><a href="/dashboard/category/blog/post/{{ blog.id }}">{{ blog.title }}</a></li>
-            <button><a href="/blog/post/{{ blog.id }}" target="_blank">preview</a></button>
+            <button><a href="/blog/{{ blog.id }}-{{ blog.title }}" target="_blank">preview</a></button>
             <button><a href="/dashboard/category/blog/post/edit/{{ blog.id }}">edit</a></button>
             <button class="btn btn-danger"><a href="/dashboard/category/blog/post/delete/{{ blog.id }}" onclick="return confirm('Are you sure you want to delete this blog?');">delete</a></button>
 
