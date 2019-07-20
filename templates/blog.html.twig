@@ -27,7 +27,7 @@
         <ul>
             <li> {{ blog.id }}</li>
             <li> {{ blog.category.name }}</li>
-            <li><a href="blog/post/{{ blog.id }}#disqus_thread">{{ blog.title }}</a></li>
+            <li><a href="blog/{{ blog.id }}-{{ blog.title }}">{{ blog.title }}</a></li>
             <li> {{ blog.article }}</li>
         </ul>
     {% endfor %}
