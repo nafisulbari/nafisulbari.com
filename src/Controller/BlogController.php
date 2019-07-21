@@ -31,9 +31,6 @@ class BlogController extends AbstractController {
 
     public function blogsWithCategory($id, Request $request, PaginatorInterface $paginator) {
 
-//        $repository = $this->getDoctrine()->getRepository(Category::class);
-//        $blogs = $repository->find($id)->getBlogpost();
-
         $em = $this->getDoctrine()->getManager();
         $blogsOfCatRepo = $em->getRepository(Blogpost::class);
 
@@ -47,7 +44,6 @@ class BlogController extends AbstractController {
             $request->query->getInt('page', 1),
             5
         );
-
         return $this->render('blogs.html.twig', ['blogs' => $blogs]);
     }
 
@@ -64,7 +60,6 @@ class BlogController extends AbstractController {
             ->andWhere('b.title LIKE :searchTerm OR b.article LIKE :searchTerm')
             ->setParameter('searchTerm', '%'.$term.'%')
             ->getQuery();
-
 
         $blogs = $paginator->paginate(
             $searchedBlogs,
