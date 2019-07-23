@@ -1,10 +1,9 @@
-{% extends 'base.html.twig'%}
+{% extends 'base.html.twig' %}
 {% block head %}
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-{% block stylesheets %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    {% endblock %}
 
+    {% block title %}Welcome to my site{% endblock %}
 
 {% endblock %}
 
@@ -13,6 +12,10 @@
 
 {% block body %}
 
-<h1>{{ message }}</h1>
+    <header>
+        <div class="hero-text-box">
+            <h1>I am Nafisul Bari. <br>A full-stack web developer.</h1>
+        </div>
+    </header>
 
 {% endblock %}

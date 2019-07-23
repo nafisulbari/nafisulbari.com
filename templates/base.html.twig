@@ -4,19 +4,20 @@
     <meta charset="UTF-8">
 
 
-    {% block stylesheets %}
+
         <link rel="stylesheet" type="text/css" href="{{ asset('vendors/css/grid.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('vendors/css/normalize.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('vendors/css/animate.css') }}">
-        <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i|Work+Sans&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i|Work+Sans&display=swap"
+              rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="{{ asset('resources/css/style.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('resources/css/queries.css') }}">
+
+    {% block stylesheets %}
     {% endblock %}
 
 
-
-    <title>{% block title %}{% endblock %}</title>
-
+    <title>{% block title %} hh {% endblock %}</title>
 
 
     {% block tinymce %}
@@ -27,28 +28,22 @@
     {% endblock %}
 </head>
 <body>
-
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-    <a class="navbar-brand" href="#">NB</a>
-    <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarColor01"
-            aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="navbar-collapse collapse" id="navbarColor01" style="">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/blog">Blog</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Contact</a>
-            </li>
+<nav>
+    <div class="row">
+        <ul class="main-nav-left">
+            <li><a href="#home">Nafisul Bari</a></li>
+        </ul>
+        <ul class="main-nav-right">
+            <li><a href="/">Home</a></li>
+            <li><a href="#">Work</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="#">Contact</a></li>
         </ul>
     </div>
 </nav>
+
+
+
 
 
 {% block body %}{% endblock %}
