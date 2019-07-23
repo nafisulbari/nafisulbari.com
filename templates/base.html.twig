@@ -28,19 +28,25 @@
     {% endblock %}
 </head>
 <body>
-<nav>
-    <div class="row">
-        <ul class="main-nav-left">
-            <li><a href="#home">Nafisul Bari</a></li>
-        </ul>
-        <ul class="main-nav-right">
-            <li><a href="/">Home</a></li>
-            <li><a href="#">Work</a></li>
-            <li><a href="/blog">Blog</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-    </div>
-</nav>
+
+    <header>
+    <nav>
+        <div class="row">
+            <ul class="main-nav-right">
+                <li><a href="#home">Nafisul Bari</a></li>
+            </ul>
+            <ul class="main-nav">
+                <li><a href="/">Home</a></li>
+                <li><a href="#">Work</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+        {% block hero_text_box %}
+        {% endblock %}
+    </header>
+
 
 
 

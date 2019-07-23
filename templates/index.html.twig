@@ -3,19 +3,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-    {% block title %}Welcome to my site{% endblock %}
+    {% block title %}{% endblock %}
+
+
+
 
 {% endblock %}
-
-
-
-
 {% block body %}
 
-    <header>
+    {% block hero_text_box %}
         <div class="hero-text-box">
             <h1>I am Nafisul Bari. <br>A full-stack web developer.</h1>
         </div>
-    </header>
+
+    {% endblock %}
+
+
+
+
+
 
 {% endblock %}
