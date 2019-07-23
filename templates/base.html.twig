@@ -2,20 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 
     {% block stylesheets %}
-        <link rel="stylesheet" type="text/css" href="{{ asset('assets/vendors/css/grid.css') }}">
-        <link rel="stylesheet" type="text/css" href="{{ asset('assets/vendors/css/normalize.css') }}">
-        <link rel="stylesheet" type="text/css" href="{{ asset('assets/vendors/css/animate.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('vendors/css/grid.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('vendors/css/normalize.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('vendors/css/animate.css') }}">
         <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i|Work+Sans&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="{{ asset('resources/css/style.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('resources/css/queries.css') }}">
     {% endblock %}
 
 
 
-
-    <title>{% block title %}Welcome!{% endblock %}</title>
-
+    <title>{% block title %}{% endblock %}</title>
 
 
 
