@@ -3,48 +3,74 @@ html, body {
     margin: 0;
     padding: 0;
 }
-
+:root{
+    font-size: 19px;
+}
 /*--------------------REUSABLE CONTENT----------------------*/
 .row {
     max-width: 1140px;
     margin: auto;
 }
+h1{
+    margin: 0;
+    font-family: "Libre Baskerville","Serif";
+    font-size:2rem ;
+    color: #FFFFFF;
+}
+h2{
+    margin: 0;
+    font-family: "Libre Baskerville", "Serif";
+    font-size:1.5rem ;
+    color: #FFFFFF;
+}
 
+h3{
+    margin: 0;
+    font-family: "Libre Baskerville", "Serif";
+    font-size:1.2rem ;
+    color: #FFFFFF;
 
+}
 /*--------------------Navigation----------------------*/
 .nav-bar {
     background-color: #707070;
-}
-.nav-bar a {
-    display: block;
     padding: 8px;
-    background-color: #707070;
-    text-decoration: none;
-    font-size: 22px;
-    color: #FFFFFF;
 }
+
 ul {
     list-style-type: none;
     overflow: hidden;
     margin: 0;
-    padding: 0;
+    padding-top: 13px;
 }
-
-.main-nav-left {
+.logo{
     float: left;
 }
-.main-nav {
-    float: right;
-}
 
-.main-nav-left a {
-    font-family: "Libre Baskerville","Serif";
-    font-size: 55px;
+.main-nav li{
+    float: right;
+
 }
 .main-nav a {
-    padding-top: 26px;
+
     font-family: "Work Sans","SansSerif";
-    margin-left: 8px;
+    margin-left: 20px;
+    text-decoration: none;
+    color: #FFFFFF;
 }
 
 
+/*--------------------HERO section----------------------*/
+
+.hero{
+    height: 80vh;
+    background-image: linear-gradient(rgba(112,112,112,.7),rgba(112,112,112,.7)),url("https://cdn.pixabay.com/photo/2019/09/29/20/34/athens-4514311_960_720.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+.message{
+    padding: 8px;
+    margin-top: 25%;
+
+}
