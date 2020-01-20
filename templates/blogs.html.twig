@@ -2,24 +2,24 @@
 
 {% block body %}
 
-    <h1>My blogs</h1>
+
 
     <h2>Categories</h2>
-{#    <ul>#}
-{#        {% for  cat in cats %}#}
-{#            <li> {{ cat.name }}</li>#}
-{#            </br>#}
-{#        {% endfor %}#}
-{#    </ul>#}
+    <ul>
+        {% for  cat in cats %}
+            <li> {{ cat.name }}</li>
+            </br>
+        {% endfor %}
+    </ul>
 
 
-    <h2>Blogs with category XXX</h2>
+    <h2>{{selectedCat}} Blogs </h2>
     {% for  blog in blogs %}
         <ul>
             <li> {{ blog.id }}</li>
 
             <li><a href="/blog/{{ blog.id }}-{{ blog.title }}">{{ blog.title }}</a></li>
-
+            <li> {{ blog.article |slice(0, 80) |raw ~ '...'}}</li>
         </ul>
     {% endfor %}
 

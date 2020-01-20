@@ -13,15 +13,19 @@ use Symfony\Component\HttpFoundation\Request;
 class BlogController extends AbstractController {
 
 
-    public function blogPage() {
+    public function blogPage(Request $request,PaginatorInterface $paginator) {
 
         $repository = $this->getDoctrine()->getRepository(Blogpost::class);
         $featuredBlogs = $repository->findBy(
             array(),
-            array('id' => 'DESC'),
-            5
-        );
+            array('id' => 'DESC')
 
+        );
+        $featuredBlogs = $paginator->paginate(
+            $featuredBlogs,
+            $request->query->getInt('page', 1),
+            4
+        );
         $repository = $this->getDoctrine()->getRepository(Category::class);
         $cats = $repository->findAll();
 
@@ -39,12 +43,20 @@ class BlogController extends AbstractController {
             ->setParameter('id', $id)
             ->getQuery();
 
+
+        $repository = $this->getDoctrine()->getRepository(Category::class);
+        $cats = $repository->findAll();
+
+        $selectedCat=$repository->find($id)->getName();
+
+
         $blogs = $paginator->paginate(
             $allBlogsOfCatQuerry,
             $request->query->getInt('page', 1),
-            5
+            4
         );
-        return $this->render('blogs.html.twig', ['blogs' => $blogs]);
+
+        return $this->render('blogs.html.twig', ['blogs' => $blogs, 'cats' => $cats, 'selectedCat'=>$selectedCat]);
     }
 
 

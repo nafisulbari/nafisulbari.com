@@ -10,7 +10,6 @@
         <input type="submit" value="SEARCH">
     </form>
 
-    <h1>Blog page</h1>
 
     <h2>Categories</h2>
     <ul>
@@ -28,7 +27,10 @@
             <li> {{ blog.id }}</li>
             <li> {{ blog.category.name }}</li>
             <li><a href="blog/{{ blog.id }}-{{ blog.title }}">{{ blog.title }}</a></li>
-            <li> {{ blog.article }}</li>
+            <li> {{ blog.article | raw | slice(0, 80) ~ '...'}}</li>
         </ul>
     {% endfor %}
+    <div class="navigation">
+        {{ knp_pagination_render(blogs) }}
+    </div>
 {% endblock %}

@@ -24,11 +24,13 @@
     <div class="example-wrapper">
         {{ blogpost.id }}
 
+        <img src="{{ asset('assets/cover/') ~blogpost.id~".jpg"}}" alt="Blog's Cover">
 
 
         <h1> {{ blogpost.title }}</h1>
         <p> {{ blogpost.category.name }}</p>
-        <p> {{ blogpost.dateCreated }}</p>
+        <p> {{ blogpost.dateCreated |date("d F Y")}}</p>
+
 
         <p> {{ blogpost.article | raw }}</p>
 
