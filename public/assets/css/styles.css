@@ -309,11 +309,7 @@ p {
     }
 }
 
-@media (max-width: 460px) {
-    #article-para {
-        font-size: 16px;
-    }
-}
+
 
 #first-let {
     float: left;
@@ -342,7 +338,7 @@ p {
 
 @media (max-width: 460px) {
     #article-title {
-        font-size: 22px;
+        font-size: 25px;
     }
 }
 

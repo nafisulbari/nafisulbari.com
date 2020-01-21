@@ -7,7 +7,7 @@
 {% block head %}
     <meta name="author" content="Ahmed Nafisul Bari">
     <meta name="keywords" content=" {{ blogpost.title | replace({' ':','}) }}">
-    <meta name="description" content="{{ blogpost.title }}">
+    <meta name="description" content="{{ blogpost.article |slice(0,250) |raw }}">
 {% endblock %}
 
 
