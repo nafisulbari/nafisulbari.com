@@ -2,33 +2,88 @@
 
 {% block body %}
 
+    <div>
+        <div class="container" id="main-cont">
+            <div class="row no-gutters" id="main-row">
+                <div class="col-md-6" id="column-left" style="max-width:auto;">
+                    <div id="headh1-div">
+                        <h1 class="text-monospace text-uppercase" id="headh1"
+                            style="font-family:Lora, serif;color:#4c4c4c;">{{ selectedCat }} Blogs</h1>
+                    </div>
+
+                    {% for  blog in blogs %}
+                        <div class="row" id="blogs">
+                            <div class="col" style="width:70%;">
+                                <div class="d-flex align-content-center" id="blog-sample-div"><img class="img-fluid"
+                                                                                                   src="/assets/img/background.jpg"
+                                                                                                   id="blog-thumbnail">
+                                    <div id="demo-article" style="margin-left:0px;"><a
+                                                href="/blog/{{ blog.id }}_{{ blog.title }}" id="blog-title"
+                                                style="font-family:Lora, serif;">{{ blog.title }}<br></a>
+                                        <p class="text-monospace" id="blog-para"
+                                           style="font-family:Nunito, sans-serif;color:#585858;">
+                                            {{ blog.article | slice(0,120) | raw }}... <br>
+                                            <a href="/blog/{{ blog.id }}_{{ blog.title }}"
+                                               style="padding-right:0px;">See
+                                                More<i class="fa fa-external-link" id="seemore-arrow"
+                                                       style="font-size:15px;"></i></a><br></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    {% endfor %}
+                    <div>
+                        <nav class="d-flex justify-content-center navigation" id="pagi"
+                             style="font-family:Lora, serif;margin-top:40px;">
 
 
-    <h2>Categories</h2>
-    <ul>
-        {% for  cat in cats %}
-            <li> {{ cat.name }}</li>
-            </br>
-        {% endfor %}
-    </ul>
+                            <ul class="pagination">
+                                {{ knp_pagination_render(blogs) }}
+                            </ul>
 
 
-    <h2>{{selectedCat}} Blogs </h2>
-    {% for  blog in blogs %}
-        <ul>
-            <li> {{ blog.id }}</li>
+                        </nav>
+                    </div>
+                </div>
+                <div class="col-md-6" id="column-right"
+                     style="width:30%;max-width:auto;margin-left:0px;padding-left:30px;">
+                    <div class="row">
+                        <div class="col" id="cat-col">
+                            <div class="d-block" id="cat-section" style="margin-top:108px;">
+                                <h1 class="text-uppercase" id="headh1" style="font-family:Lora, serif;font-size:22px;">
+                                    CATEGORIES</h1>
+                                <div style="padding-left:10px;">
 
-            <li><a href="/blog/{{ blog.id }}-{{ blog.title }}">{{ blog.title }}</a></li>
-            <li> {{ blog.article |slice(0, 80) |raw ~ '...'}}</li>
-        </ul>
-    {% endfor %}
+                                    {% for  cat in cats %}
+                                        <div class="d-flex"
+                                             style="margin-bottom:5px;"><i class="fa fa-folder-open-o" id="cat-icon"
+                                                                           style="margin-right:10px;margin-left:0px;padding-right:0px;"></i><a
+                                                    href="/blogs/{{ cat.id }}" id="cat-litem-ink"
+                                                    style="font-family:Nunito, sans-serif;color:#585858;">{{ cat.name }}</a>
+                                        </div>
+                                    {% endfor %}
 
-
-
-
-    <div class="navigation">
-        {{ knp_pagination_render(blogs) }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
+
+
+
+
+
+
+
+
+
+
+
 {% endblock %}
 
 

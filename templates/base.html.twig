@@ -4,18 +4,22 @@
     <meta charset="UTF-8">
 
 
-    <link rel="stylesheet" type="text/css" href="{{ asset('vendors/css/grid.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('vendors/css/animate.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('resources/css/style.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('resources/css/queries.css') }}">
-
-    <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i|Work+Sans&display=swap"
-          rel="stylesheet">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>featured</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito">
+    <link rel="stylesheet" href="{{ asset('assets/css/Footer-Dark.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/Navigation-with-Search.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/styles.css') }}">
     {% block stylesheets %}
     {% endblock %}
 
 
-    <title>{% block title %} hh {% endblock %}</title>
+    <title>{% block title %} hhff {% endblock %}</title>
 
 
     {% block tinymce %}
@@ -27,28 +31,56 @@
 </head>
 <body>
 
-
-<nav>
-    <div class="nav-bar">
-        <div class="row">
-            <div class="logo">
-                <h1>Nafisul Bari</h1>
-            </div>
-            <div class="main-nav">
-                <ul>
-                    <li><a href="#">Contact</a></li>
-                    <li><a href="/blog">Blog</a></li>
-                    <li><a href="#">Work</a></li>
-                    <li><a href="/">Home</a></li>
-                </ul>
-            </div>
-
+<nav class="navbar navbar-light navbar-expand-md sticky-top navigation-clean-search" id="navvbar-shadow"
+     style="background-color:#0b0b0b;font-size:16px;font-family:Montserrat, sans-serif;">
+    <div class="container"><a class="navbar-brand, pointer" href="/" id="logo" style="color:#fcfcfc;font-family:Lora, serif;">Nafisul
+            Bari's <small>Blog </small></a>
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1" id="menu-mobile"><span
+                    class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"
+                                                                  style="color:rgb(167,167,167);"><i
+                        class="fa fa-align-justify" style="font-size:25px;color:#fcfcfc;margin-top:3px;"></i></span>
+        </button>
+        <div
+                class="collapse navbar-collapse" id="navcol-1">
+            <form class="form-inline ml-auto" target="_self" action="/blogs/search" method="GET">
+                <div class="form-group">
+                    <div class="d-flex"><i class="fa fa-search" id="search-ico"
+                                           style="color:#fcfcfc;font-size:18px;padding-top:12px;"></i><input
+                                class="form-control search-field" type="search" name="searchTerm" id="search-field"
+                                style="color:#fcfcfc;font-family:Hind, sans-serif;"></div>
+                </div>
+            </form>
         </div>
     </div>
 </nav>
 
 
 {% block body %}{% endblock %}
+
+<div id="footer-blo" class="footer-dark" style="background-color:#4e4e4e;padding:35px;">
+    <footer>
+        <div class="container , footer-text">
+            <div class="row">
+                <div class="col item social">
+                    <a target="_blank" href="https://www.facebook.com/nafisulbari1">
+                        <i class="fa fa-facebook-square">
+                        </i>
+                    </a><a target="_blank" href="https://www.instagram.com/r47ul"><i class="fa fa-instagram">
+                        </i></a>
+                    <a target="_blank" href="https://github.com/nafisulbari">
+                        <i class="icon ion-social-github">
+
+                        </i></a><a target="_blank"
+                            href="https://www.linkedin.com/in/ahmed-nafisul-bari-651b23ab"><i class="icon ion-social-linkedin"></i></a></div>
+            </div>
+            <p class="copyright" style="padding:6px;"><br>Copyright © 2019, Nafisul Bari. All Rights Reserved<br></p>
+        </div>
+    </footer>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.0/js/bootstrap.bundle.min.js"></script>
+
+
 {% block javascripts %}{% endblock %}
 </body>
 </html>

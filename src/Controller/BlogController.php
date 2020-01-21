@@ -76,10 +76,14 @@ class BlogController extends AbstractController {
         $blogs = $paginator->paginate(
             $searchedBlogs,
             $request->query->getInt('page', 1),
-            5
+            4
         );
 
-        return $this->render('search.html.twig', ['blogs' => $blogs]);
+        $repository = $this->getDoctrine()->getRepository(Category::class);
+        $cats = $repository->findAll();
+
+
+        return $this->render('search.html.twig', ['blogs' => $blogs, 'cats' =>$cats]);
     }
 
 
