@@ -21,12 +21,12 @@
                                                                                                    src="/assets/img/background.jpg"
                                                                                                    id="blog-thumbnail">
                                     <div id="demo-article" style="margin-left:0px;"><a
-                                                href="blog/{{ blog.id }}_{{ blog.title }}" id="blog-title"
+                                                href="blog/{{ blog.id }}_{{ blog.title | replace({' ':'-'})}}" id="blog-title"
                                                 style="font-family:Lora, serif;">{{ blog.title }}<br></a>
                                         <p class="text-monospace" id="blog-para"
                                            style="font-family:Nunito, sans-serif;color:#585858;">
                                             {{ blog.article | slice(0,120) | raw }}... <br>
-                                            <a href="blog/{{ blog.id }}_{{ blog.title }}"
+                                            <a href="blog/{{ blog.id }}_{{ blog.title | replace({' ':'-'})}}"
                                                            style="padding-right:0px;">See
                                                 More<i class="fa fa-external-link" id="seemore-arrow"
                                                        style="font-size:15px;"></i></a><br></p>
@@ -57,7 +57,7 @@
                             <div class="d-block" id="cat-section" style="margin-top:108px;">
                                 <h1 class="text-uppercase" id="headh1" style="font-family:Lora, serif;font-size:22px;">
                                     CATEGORIES</h1>
-                                <div style="padding-left:10px;">
+                                <div class="cats" style="padding-left:10px;">
 
                                     {% for  cat in cats %}
                                         <div class="d-flex"

@@ -2,11 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-
-
     <meta charset="utf-8">
+    {% block head %}
+        <meta name="author" content="Ahmed Nafisul Bari">
+        <meta name="keywords" content="Ahmed Nafisul Bari, Nafisul Bari, Nafisul Bari Blog">
+        <meta name="description" content="Hi there, I am Ahmed Nafisul Bari.
+A freelance backend web developer from Bangladesh.
+I am an occasional blog writer.
+Tech, Science, Games are some of the things I fancy.">
+    {% endblock %}
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>featured</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
@@ -18,23 +24,22 @@
     {% block stylesheets %}
     {% endblock %}
 
-
-    <title>{% block title %} hhff {% endblock %}</title>
-
+    {% block title %}
+    <title>Nafisul Bari's Blog</title>
+    {% endblock %}
 
     {% block tinymce %}
 
     {% endblock %}
 
-    {% block head %}
-    {% endblock %}
+
 </head>
 <body>
 
 <nav class="navbar navbar-light navbar-expand-md sticky-top navigation-clean-search" id="navvbar-shadow"
      style="background-color:#0b0b0b;font-size:16px;font-family:Montserrat, sans-serif;">
-    <div class="container"><a class="navbar-brand, pointer" href="/" id="logo" style="color:#fcfcfc;font-family:Lora, serif;">Nafisul
-            Bari's <small>Blog </small></a>
+    <div class="container"><a class="navbar-brand, pointer" href="/" id="logo" style="color:#fcfcfc;font-family:Lora, serif;"><small>Nafisul
+            Bari's Blog </small></a>
         <button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1" id="menu-mobile"><span
                     class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"
                                                                   style="color:rgb(167,167,167);"><i

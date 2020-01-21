@@ -24,6 +24,7 @@ p {
     width: 70%;
     flex: auto;
     max-width: none;
+    z-index: 10;
 }
 
 #column-right {
@@ -246,12 +247,12 @@ p {
 }
 
 #logo {
-    font-size: 40px;
+    font-size: 50px;
 }
 
 @media (max-width: 768px) {
     #logo {
-        font-size: 30px;
+        font-size: 40px;
     }
 }
 
@@ -367,11 +368,13 @@ p {
 
 #pagi {
     font-size: 18px;
+
 }
 
 @media (max-width: 460px) {
     #pagi {
         font-size: 16px;
+
     }
 }
 
@@ -450,6 +453,9 @@ p {
     }
 }
 
+.cats{
+    margin-top: 15px;
+}
 
 .pointer {
     cursor: pointer;
