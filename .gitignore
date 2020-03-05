@@ -1,12 +1,15 @@
 
 ###> symfony/framework-bundle ###
-/.env.local
-/.env.local.php
-/.env.*.local
-/public/bundles/
-/var/
-/vendor/
+/site_backend/.env.local
+/site_backend/.env.local.php
+/site_backend/.env.*.local
+/site_backend/public/bundles/
+/site_backend/var/
+/site_backend/vendor/
 
 .idea
 .idea/*
+
+
 ###< symfony/framework-bundle ###
+

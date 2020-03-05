@@ -1,0 +1,75 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    <title> {{ blogpost.title }} - Nafisul Bari's Blog</title>
+{% endblock %}
+
+{% block head %}
+    <meta name="author" content="Ahmed Nafisul Bari">
+    <meta name="keywords" content="{{ blogpost.title | replace({' ':','}) }}">
+    <meta name="description" content="{{ blogpost.article | striptags | slice(0,110) | raw }}">
+
+    <link rel="canonical" href="https://blog.nafisulbari.com/blog/{{ blogpost.id }}-{{ blogpost.title | replace({' ':'-'})}}"/>
+{% endblock %}
+
+
+
+{% block body %}
+
+
+    <div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="article-info">
+                        <h1 id="article-title"
+                            style="color:#4c4c4c;">{{ blogpost.title }}&nbsp;<br>
+                        </h1>
+                        <p id="article-date">
+                            <span id="icon-span" ico-cal=""><i class="fa fa-calendar-o d-inline" style="font-size:16px;"></i></span>&nbsp; {{ blogpost.dateCreated |date("d F Y") }}
+                        </p>
+                        <h2 id="article-author"><span
+                                    id="icon-span"><i class="fa fa-user-circle" style="font-size:16px;"></i></span>&nbsp;
+                            Ahmed Nafisul Bari</h2>
+                    </div>
+                    <div id="cover2-div"><img alt="Blog Cover Image" class="img-fluid" src="{{ asset('assets/cover/') ~blogpost.id~".jpg" }}"
+                                              id="cover2" style="max-width:1140px;height:auto;"></div>
+                    <div class="d-block blogpost-article" id="article">
+
+                        <div id="article-para">{{ blogpost.article| raw }}
+                        </div>
+                        <div id="disqus_thread"></div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+
+        /**
+         *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+         *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+        /*
+        var disqus_config = function () {
+        this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+        */
+        (function () { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = 'https://nafisulbari-com.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+
+
+    <script id="dsq-count-scr" src="//nafisulbari-com.disqus.com/count.js" async></script>
+
+
+{% endblock %}
