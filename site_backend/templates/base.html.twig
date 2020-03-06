@@ -30,8 +30,7 @@ Tech, Science, Games are some of the things I fancy.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-{#    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora">#}
-{#    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito+Sans">#}
+{#    <link href="https://fonts.googleapis.com/css?family=Lora|Nunito+Sans:400,600&display=swap" rel="stylesheet">#}
     <link rel="stylesheet" href="{{ asset('assets/css/Navigation-with-Search.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/styles.css') }}">
     {% block stylesheets %}
@@ -49,35 +48,13 @@ Tech, Science, Games are some of the things I fancy.">
 </head>
 <body>
 
-{#<nav class="navbar navbar-light navbar-expand-md navigation-clean-search" id="navvbar-shadow"#}
-{#     style="background-color:#0b0b0b;font-size:16px;font-family:Montserrat, sans-serif;">#}
-{#    <div class="container"><a class="navbar-brand, pointer" href="/" id="logo"#}
-{#                              style="color:#fcfcfc;font-family:Lora, serif;"><small>Nafisul#}
-{#                Bari's Blog </small></a>#}
-{#        <button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1" id="menu-mobile"><span#}
-{#                    class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"#}
-{#                                                                  style="color:rgb(167,167,167);"><i#}
-{#                        class="fa fa-align-justify" style="font-size:25px;color:#fcfcfc;margin-top:3px;"></i></span>#}
-{#        </button>#}
-{#        <div#}
-{#                class="collapse navbar-collapse" id="navcol-1">#}
-{#            <form class="form-inline ml-auto" target="_self" action="/blogs/search" method="GET">#}
-{#                <div class="form-group">#}
-{#                    <div class="d-flex"><i class="fa fa-search" id="search-ico"#}
-{#                                           style="color:#fcfcfc;font-size:18px;padding-top:12px;"></i><input#}
-{#                                class="form-control search-field" type="search" name="searchTerm" id="search-field"#}
-{#                                style="color:#fcfcfc;font-family:Hind, sans-serif;"></div>#}
-{#                </div>#}
-{#            </form>#}
-{#        </div>#}
-{#    </div>#}
-{#</nav>#}
+
 <nav class="navbar navbar-light navbar-expand-md navigation-clean-search" id="nav-bar" style="background-color:rgb(255,255,255);">
-    <div class="container"><a class="navbar-brand" href="/" id="brand-nb" style="font-family:Lora, serif;color:rgb(26,26,26);font-size:16px;">NB</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+    <div class="container"><a class="navbar-brand" href="/" id="brand-nb" style="font-family:Lora, serif;color:rgb(26,26,26);font-size:16px;">NB</a><button class="navbar-toggler" id="menu-mobile" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
         <div
                 class="collapse navbar-collapse" id="navcol-1">
-            <form class="form-inline ml-auto" target="_self" style="font-family:'Nunito Sans', sans-serif;">
-                <div class="form-group" id="search-bar"><label for="search-field" style="color:rgb(26,26,26);"><i class="fa fa-search" style="color:rgb(26,26,26);"></i></label><input class="form-control search-field" type="search" name="search" style="color:#1a1a1a;"></div>
+            <form class="form-inline ml-auto" style="font-family:'Nunito Sans', sans-serif;" target="_self" action="/blogs/search" method="GET">
+                <div class="form-group" id="search-bar"><label for="search-field" style="color:rgb(26,26,26);"><i class="fa fa-search" style="color:rgb(26,26,26);"></i></label><input class="form-control search-field" type="search" name="searchTerm" style="color:#1a1a1a;"></div>
             </form>
             <ul class="nav navbar-nav ml-auto" id="nav-links" style="font-family:'Nunito Sans', sans-serif;">
                 <li class="nav-item" role="presentation"><a class="nav-link" href="/" style="color:rgb(26,26,26);">Home</a></li>
@@ -93,22 +70,7 @@ Tech, Science, Games are some of the things I fancy.">
 
 {% block body %}{% endblock %}
 
-{#<div class="footer-basic">#}
-{#    <footer>#}
-{#        <div class="social">#}
-{#            <a target="_blank" href="https://www.facebook.com/nafisulbari1"><i class="fa fa-facebook-square"></i></a>#}
-{#            <a target="_blank" href="https://www.instagram.com/r47ul"><i class="icon ion-social-instagram"></i></a>#}
-{#            <a target="_blank" href="https://github.com/nafisulbari"><i class="icon ion-social-github"></i></a>#}
-{#            <a target="_blank" href="https://www.linkedin.com/in/ahmed-nafisul-bari-651b23ab"><i#}
-{#                        class="icon ion-social-linkedin"></i></a></div>#}
-{#        <ul class="list-inline">#}
-{#            <li class="list-inline-item"><a href="/">Home</a></li>#}
-{#            <li class="list-inline-item"><a target="_blank" href="https://nafisulbari.com/">About Me</a></li>#}
-{#            <li class="list-inline-item"><a target="_blank" href="#">Noksha IA</a></li>#}
-{#        </ul>#}
-{#        <p class="copyright">© 2020, Nafisul Bari</p>#}
-{#    </footer>#}
-{#</div>#}
+
 
 
 

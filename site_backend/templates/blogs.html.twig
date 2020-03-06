@@ -17,7 +17,7 @@ Tech, Science, Games are some of the things I fancy. Find {{ selectedCat }} blog
     <div>
         <div class="container" id="main-cont">
             <div class="row no-gutters" id="main-row">
-                <div class="col-md-6" id="column-left" style="max-width:auto;">
+                <div class="col-lg-8">
                     <div id="headh1-div">
                         <h1 class="text-monospace text-uppercase" id="headh1"
                             style="font-family:Lora, serif;color:#4c4c4c;">{{ selectedCat }}</h1>
@@ -25,7 +25,7 @@ Tech, Science, Games are some of the things I fancy. Find {{ selectedCat }} blog
 
                     {% for  blog in blogs %}
                         <div class="row" id="blogs">
-                            <div class="col" style="width:70%;">
+                            <div class="col">
                                 <div class="d-flex align-content-center" id="blog-sample-div">
 
                                     <div class="container">
@@ -38,7 +38,7 @@ Tech, Science, Games are some of the things I fancy. Find {{ selectedCat }} blog
                                                      id="blog-thumbnail"
                                                      alt="Cover Image">
                                             </div>
-                                            <div class="col-sm" id="demo-article" style="margin-left:0px;"><a
+                                            <div class="col-sm" id="demo-article"><a
                                                         href="/blog/{{ blog.id }}-{{ blog.title | replace({' ':'-'}) }}"
                                                         id="blog-title"
                                                         style="font-family:Lora, serif;">{{ blog.title }}<br></a>
@@ -65,16 +65,14 @@ Tech, Science, Games are some of the things I fancy. Find {{ selectedCat }} blog
                              style="font-family:Lora, serif;margin-top:40px;">
 
 
-                            <ul class="pagination">
-                                {{ knp_pagination_render(blogs) }}
-                            </ul>
+                            {{ knp_pagination_render(blogs) }}
 
 
                         </nav>
                     </div>
                 </div>
-                <div class="col-md-6" id="column-right"
-                     style="width:30%;max-width:auto;margin-left:0px;padding-left:30px;">
+                <div class="col-lg-4"
+                     style="margin-left:0px;padding-left:30px;">
                     <div class="row">
                         <div class="col" id="cat-col">
                             <div class="d-block" id="cat-section" style="margin-top:108px;">
@@ -86,9 +84,14 @@ Tech, Science, Games are some of the things I fancy. Find {{ selectedCat }} blog
                                         <div class="d-flex"
                                              style="margin-bottom:5px;"><i class="fa fa-folder-open-o" id="cat-icon"
                                                                            style="margin-right:10px;margin-left:0px;padding-right:0px;"></i><a
-                                                    href="/category/{{ cat.id }}-{{ cat.name | replace({' ':'-'})}}" id="cat-litem-ink"
+                                                    href="/category/{{ cat.id }}-{{ cat.name | replace({' ':'-'}) }}"
+                                                    id="cat-litem-ink"
                                                     style="font-family:Nunito, sans-serif;color:#585858;">{{ cat.name }}</a>
                                         </div>
+
+
+
+
                                     {% endfor %}
 
                                 </div>
@@ -101,17 +104,11 @@ Tech, Science, Games are some of the things I fancy. Find {{ selectedCat }} blog
     </div>
 
 
-
-
-
-
-
-
-
     <footer id="footer">
-        <h3 class="text-center" id="footer-tag" style="font-family:'Nunito Sans', sans-serif;color:rgb(88,88,88);font-size:16px;"><br>© 2020, Nafisul Bari<br><br></h3>
+        <h3 class="text-center" id="footer-tag"
+            style="font-family:'Nunito Sans', sans-serif;color:rgb(88,88,88);font-size:16px;"><br>© 2020, Nafisul
+            Bari<br><br></h3>
     </footer>
-
 
 {% endblock %}
 

@@ -10,7 +10,7 @@
     <div>
         <div class="container" id="main-cont">
             <div class="row no-gutters" id="main-row">
-                <div class="col-md-6" id="column-left" style="max-width:auto;">
+                <div class="col-lg-8">
                     <div id="headh1-div">
                         <h1 class="text-monospace text-uppercase" id="headh1"
                             style="font-family:Lora, serif;color:#4c4c4c;">Featured Blogs</h1>
@@ -18,7 +18,7 @@
 
                     {% for  blog in blogs %}
                         <div class="row" id="blogs">
-                            <div class="col" style="width:70%;">
+                            <div class="col">
                                 <div class="d-flex align-content-center" id="blog-sample-div">
 
                                     <div class="container">
@@ -31,7 +31,7 @@
                                                      id="blog-thumbnail"
                                                      alt="Cover Image">
                                             </div>
-                                            <div class="col-sm" id="demo-article" style="margin-left:0px;"><a
+                                            <div class="col-sm" id="demo-article"><a
                                                         href="/blog/{{ blog.id }}-{{ blog.title | replace({' ':'-'}) }}"
                                                         id="blog-title"
                                                         style="font-family:Lora, serif;">{{ blog.title }}<br></a>
@@ -64,8 +64,8 @@
                         </nav>
                     </div>
                 </div>
-                <div class="col-md-6" id="column-right"
-                     style="width:30%;max-width:auto;margin-left:0px;padding-left:30px;">
+                <div class="col-lg-4"
+                     style="margin-left:0px;padding-left:30px;">
                     <div class="row">
                         <div class="col" id="cat-col">
                             <div class="d-block" id="cat-section" style="margin-top:108px;">
