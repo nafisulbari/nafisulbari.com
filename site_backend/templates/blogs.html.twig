@@ -34,7 +34,7 @@ Tech, Science, Games are some of the things I fancy. Find {{ selectedCat }} blog
                                                 style="font-family:Lora, serif;">{{ blog.title }}<br></a>
                                         <p class="text-monospace" id="blog-para"
                                            style="font-family:Nunito, sans-serif;color:#585858;">
-                                            {{ blog.article | striptags| slice(0,110) | raw}}...
+                                            {{ blog.article | striptags| slice(0,100) | raw}}...
                                             <a href="/blog/{{ blog.id }}-{{ blog.title | replace({' ':'-'})}}"
                                                style="padding-right:0px;">See
                                                 More<i class="fa fa-external-link" id="seemore-arrow"
