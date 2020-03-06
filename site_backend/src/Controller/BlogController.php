@@ -36,7 +36,7 @@ class BlogController extends AbstractController {
         $cats = $repository->findAll();
 
 
-        return $this->render('blog.html.twig', ['blogs' => $featuredBlogs, 'cats' => $cats]);
+        return $this->render('blog.html.twig', ['blogs' => $featuredBlogs, 'cats' => $cats, 'selectedCat' =>"Featured Blogs"]);
     }
 
     public function blogsWithCategory($id, Request $request, PaginatorInterface $paginator) {
@@ -62,7 +62,7 @@ class BlogController extends AbstractController {
             4
         );
 
-        return $this->render('blogs.html.twig', ['blogs' => $blogs, 'cats' => $cats, 'selectedCat'=>$selectedCat]);
+        return $this->render('blog.html.twig', ['blogs' => $blogs, 'cats' => $cats, 'selectedCat'=>$selectedCat]);
     }
 
 
@@ -89,7 +89,7 @@ class BlogController extends AbstractController {
         $cats = $repository->findAll();
 
 
-        return $this->render('search.html.twig', ['blogs' => $blogs, 'cats' =>$cats]);
+        return $this->render('blog.html.twig', ['blogs' => $blogs, 'cats' =>$cats,  'selectedCat' =>"Search Results"]);
     }
 
 

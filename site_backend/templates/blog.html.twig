@@ -1,7 +1,21 @@
 {% extends 'base.html.twig' %}
+{% block title %}
+    <title> {{ selectedCat }} - Nafisul Bari's Blog</title>
+{% endblock %}
 
+{% block head %}
+    <meta name="author" content="Ahmed Nafisul Bari">
+    <meta name="keywords" content="{{ selectedCat }} blogs in Nafisul Bari's Blog">
+    <meta name="description" content="Hi there, I am Ahmed Nafisul Bari.
+A freelance backend web developer from Bangladesh.
+I am an occasional blog writer.
+Tech, Science, Games are some of the things I fancy. Find  {{ selectedCat }}  blogs here.">
+
+{% endblock %}
     {% block search %}
-        <div class="form-group" id="search-bar"><label for="search-field" style="color:rgb(55,67,77);"><i class="fa fa-search" style="color:rgb(55,67,77);"></i></label><input class="form-control search-field" id="serch-frm-ctrl" type="search" name="searchTerm" style="color:#1a1a1a;"></div>
+        <div class="form-group" id="search-bar"><label for="search-field" style="color:rgb(55,67,77);"><i
+                        class="fa fa-search" style="color:rgb(55,67,77);"></i></label><input
+                    class="form-control search-field" type="search" name="searchTerm" style="color:#1a1a1a;"></div>
     {% endblock %}
 
 {% block body %}
@@ -14,8 +28,12 @@
                 <div class="col-lg-8">
                     <div id="headh1-div">
                         <h1 class="text-monospace text-uppercase" id="headh1"
-                            style="font-family:Lora, serif;color:#4c4c4c;">Featured Blogs</h1>
+                            style="font-family:Lora, serif;color:#4c4c4c;">{{ selectedCat }}</h1>
                     </div>
+                    {% if blogs is empty %}
+                        <p class="text-monospace" id="blog-para"
+                           style="font-family:Nunito, sans-serif;color:#585858;" >No articles found</p>
+                    {% endif %}
 
                     {% for  blog in blogs %}
                         <div class="row" id="blogs">
