@@ -16,6 +16,7 @@
         <div class="form-group" id="search-bar"><label for="search-field" style="color:rgb(55,67,77);"><i class="fa fa-search" style="color:rgb(55,67,77);"></i></label><input class="form-control search-field" type="search" name="searchTerm" style="color:#1a1a1a;"></div>
     {% endblock %}
 
+
 {% block body %}
 
 
@@ -34,7 +35,9 @@
                                     id="icon-span"><i class="fa fa-user-circle" style="font-size:16px;"></i></span>&nbsp;
                             Ahmed Nafisul Bari</h2>
                     </div>
-                    <div id="cover2-div"><img alt="Blog Cover Image" class="img-fluid" src="{{ asset('assets/cover/') ~blogpost.id~".jpg" }}"
+                    <div id="cover2-div"><img alt="Blog Cover Image" class="img-fluid"
+                                              src="https://source.unsplash.com/random/1140x450/"
+{#                                              src="{{ asset('assets/cover/') ~blogpost.id~".jpg" }}"#}
                                               id="cover2" style="max-width:1140px;height:auto;"></div>
                     <div class="d-block blogpost-article" id="article">
 
