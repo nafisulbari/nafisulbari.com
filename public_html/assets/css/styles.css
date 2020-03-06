@@ -46,6 +46,12 @@ p {
 #menu-mobile {
     border: 0;
 }
+#menu-mobile-cont{
+    z-index: 10;
+    overflow: hidden;
+
+    position: relative;
+}
 
 
 #blog-title {
@@ -66,7 +72,11 @@ p {
 #blogs {
     margin-top: 40px;
 }
-
+@media (max-width: 576px) {
+    #blogs {
+       margin-bottom: 60px;
+    }
+}
 
 #blog-para {
     margin-top: 5px;
@@ -145,6 +155,16 @@ p {
 #demo-article {
     padding: 20px 20px 20px 20px;
 }
+@media (max-width: 768px) {
+    #demo-article {
+        padding: 10px 10px 10px 10px;
+    }
+}
+@media (max-width: 578px) {
+    #demo-article {
+        padding: 20px 20px 20px 20px;
+    }
+}
 
 
 
@@ -176,7 +196,12 @@ p {
         max-width: 576px;
     }
 }
+@media (max-width: 576px) {
+    #main-cont {
+       padding: 25px;
 
+    }
+}
 
 
 #cat-section {
@@ -228,7 +253,6 @@ p {
 @media (max-width: 460px) {
     #headh1-div {
         margin-top: 35px;
-        margin-bottom: 30px;
     }
 }
 
@@ -249,7 +273,6 @@ p {
 @media (max-width: 768px) {
     #blog-thumb-div {
         margin-right: 0px;
-        min-width: 210px;
     }
 }
 
@@ -258,10 +281,16 @@ p {
     width: 210px;
     height: 210px;
 }
+@media (max-width: 768px) {
+    #blog-thumbnail {
+        height: 170px;
+        width: 170px;
+    }
+}
 
 @media (max-width: 576px) {
     #blog-thumbnail {
-        height: 200px;
+        height: 210px;
         width: auto;
     }
 }
@@ -300,8 +329,10 @@ p {
 }
 
 #article-para img {
-    margin-top: 15px;
-    margin-bottom: 25px;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.04),0 6px 20px 0 rgba(0, 0, 0, 0.04);
+
 }
 
 
@@ -375,7 +406,7 @@ p {
 }
 
 #cover2-div {
-    box-shadow: rgba(0, 0, 0, 0.03) 0px 4px 8px 0px, rgba(0, 0, 0, 0.04) 0px 6px 20px 0px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.04),0 6px 20px 0 rgba(0, 0, 0, 0.04);
 }
 
 #tiny-div {
@@ -449,16 +480,6 @@ p {
 
 /*-------------------------site update from site4.0-------------------*/
 
-#hero-img {
-}
-
-#hero-div {
-    height: 90vh;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background: linear-gradient(rgba(28, 28, 27, 0.61), rgba(28, 28, 27, 0.61)), url("../../assets/img/hero_image.jpg");
-    background-attachment: fixed;
-}
 
 #nav-links {
     margin-left: 0 !important;
