@@ -55,8 +55,8 @@ DirectoryIndex index.php
 
     # Rewrite all other queries to the front controller.
     RewriteRule ^ %{ENV:BASE}/index.php [L]
-    RewriteCond %{HTTP_HOST} ^www\.blog.nafisulbari\.com$
-    RewriteRule ^/?$ "http\:\/\/blog.nafisulbari\.com\/" [R=301,L]
+    RewriteCond %{HTTP_HOST} ^www\nafisulbari\.com$
+    RewriteRule ^/?$ "http\:\/\/nafisulbari\.com\/" [R=301,L]
 </IfModule>
 
 <IfModule !mod_rewrite.c>
