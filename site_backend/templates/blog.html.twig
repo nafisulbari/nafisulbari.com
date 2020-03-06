@@ -1,9 +1,10 @@
 {% extends 'base.html.twig' %}
 
-
+    {% block search %}
+        <div class="form-group" id="search-bar"><label for="search-field" style="color:rgb(55,67,77);"><i class="fa fa-search" style="color:rgb(55,67,77);"></i></label><input class="form-control search-field" type="search" name="searchTerm" style="color:#1a1a1a;"></div>
+    {% endblock %}
 
 {% block body %}
-
 
 
 

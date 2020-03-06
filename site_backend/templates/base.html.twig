@@ -53,9 +53,13 @@ Tech, Science, Games are some of the things I fancy.">
     <div class="container"><a class="navbar-brand" href="/" id="brand-nb" style="font-family:Lora, serif;color:rgb(26,26,26);font-size:16px;">NB</a><button class="navbar-toggler" id="menu-mobile" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
         <div
                 class="collapse navbar-collapse" id="navcol-1">
+
             <form class="form-inline ml-auto" style="font-family:'Nunito Sans', sans-serif;" target="_self" action="/blogs/search" method="GET">
-                <div class="form-group" id="search-bar"><label for="search-field" style="color:rgb(26,26,26);"><i class="fa fa-search" style="color:rgb(26,26,26);"></i></label><input class="form-control search-field" type="search" name="searchTerm" style="color:#1a1a1a;"></div>
+                {% block search %}
+
+                {% endblock %}
             </form>
+
             <ul class="nav navbar-nav ml-auto" id="nav-links" style="font-family:'Nunito Sans', sans-serif;">
                 <li class="nav-item" role="presentation"><a class="nav-link" href="/" style="color:rgb(26,26,26);">Home</a></li>
                 <li class="nav-item" role="presentation"><a class="nav-link" href="/about" style="color:rgb(26,26,26);">About</a></li>
