@@ -19,21 +19,34 @@
                     {% for  blog in blogs %}
                         <div class="row" id="blogs">
                             <div class="col" style="width:70%;">
-                                <div class="d-flex align-content-center" id="blog-sample-div"><img class="img-fluid"
-{#                                                                                                   src="{{ asset('assets/cover/') ~blog.id~".jpg" }}"#}
-                                            src="https://source.unsplash.com/random/1140x500/"
-                                                                                                   id="blog-thumbnail" alt="Cover Image">
-                                    <div id="demo-article" style="margin-left:0px;"><a
-                                                href="blog/{{ blog.id }}-{{ blog.title | replace({' ':'-'})}}" id="blog-title"
-                                                style="font-family:Lora, serif;">{{ blog.title }}<br></a>
-                                        <p class="text-monospace" id="blog-para"
-                                           style="font-family:Nunito, sans-serif;color:#585858;">
-                                            {{ blog.article | striptags| slice(0,100) | raw }}...
-                                            <a href="blog/{{ blog.id }}-{{ blog.title | replace({' ':'-'})}}"
-                                                           style="padding-right:0px;">See
-                                                More<i class="fa fa-external-link" id="seemore-arrow"
-                                                       style="font-size:15px;"></i></a><br></p>
+                                <div class="d-flex align-content-center" id="blog-sample-div">
+
+                                    <div class="container">
+                                        <div class="row">
+
+                                            <div class="col-sm-4" id="blog-thumb-div">
+                                                <img class="img-fluid"
+                                                        {#        src="{{ asset('assets/cover/') ~blog.id~".jpg" }}"#}
+                                                     src="https://source.unsplash.com/random/1140x500/"
+                                                     id="blog-thumbnail"
+                                                     alt="Cover Image">
+                                            </div>
+                                            <div class="col-sm" id="demo-article" style="margin-left:0px;"><a
+                                                        href="/blog/{{ blog.id }}-{{ blog.title | replace({' ':'-'}) }}"
+                                                        id="blog-title"
+                                                        style="font-family:Lora, serif;">{{ blog.title }}<br></a>
+                                                <p class="text-monospace" id="blog-para"
+                                                   style="font-family:Nunito, sans-serif;color:#585858;">
+                                                    {{ blog.article | striptags| slice(0,100) | raw }}...
+                                                    <a href="/blog/{{ blog.id }}-{{ blog.title | replace({' ':'-'}) }}"
+                                                       style="padding-right:0px;">See
+                                                        More<i class="fa fa-external-link" id="seemore-arrow"
+                                                               style="font-size:15px;"></i></a><br></p>
+                                            </div>
+                                        </div>
                                     </div>
+
+
                                 </div>
                             </div>
                         </div>
@@ -45,9 +58,7 @@
                              style="font-family:Lora, serif;margin-top:40px;">
 
 
-
-                                {{ knp_pagination_render(blogs) }}
-
+                            {{ knp_pagination_render(blogs) }}
 
 
                         </nav>
@@ -66,7 +77,8 @@
                                         <div class="d-flex"
                                              style="margin-bottom:5px;"><i class="fa fa-folder-open-o" id="cat-icon"
                                                                            style="margin-right:10px;margin-left:0px;padding-right:0px;"></i><a
-                                                    href="/category/{{ cat.id }}-{{ cat.name | replace({' ':'-'})}}" id="cat-litem-ink"
+                                                    href="/category/{{ cat.id }}-{{ cat.name | replace({' ':'-'}) }}"
+                                                    id="cat-litem-ink"
                                                     style="font-family:Nunito, sans-serif;color:#585858;">{{ cat.name }}</a>
                                         </div>
 
@@ -86,7 +98,9 @@
 
 
     <footer id="footer">
-        <h3 class="text-center" id="footer-tag" style="font-family:'Nunito Sans', sans-serif;color:rgb(88,88,88);font-size:16px;"><br>© 2020, Nafisul Bari<br><br></h3>
+        <h3 class="text-center" id="footer-tag"
+            style="font-family:'Nunito Sans', sans-serif;color:rgb(88,88,88);font-size:16px;"><br>© 2020, Nafisul
+            Bari<br><br></h3>
     </footer>
 {% endblock %}
 

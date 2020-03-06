@@ -1,9 +1,9 @@
 
-body{
+body {
     font-family: Nunito, sans-serif;
 }
 
-#navbar-tog-mob{
+#navbar-tog-mob {
     border: 0px;
 }
 
@@ -42,19 +42,11 @@ p {
     letter-spacing: .2px;
 }
 
-@media (max-width: 768px) {
-    p {
-        font-size: 16px;
-    }
-}
 
 #menu-mobile {
     border: 0;
 }
 
-#blog-thumbnail {
-    object-fit: cover;
-}
 
 #column-left {
     width: 70%;
@@ -75,38 +67,38 @@ p {
     font-size: 25px;
     font-weight: 500;
     color: #0b0b0b;
-    letter-spacing: .3px;
+    letter-spacing: 0.03rem;
     line-height: 1.75rem;
 }
 
 
 #blogs {
-    margin-top: 35px;
+    margin-top: 40px;
 }
 
-@media (max-width: 460px) {
-    #blogs {
-        margin-top: 22px;
-        margin-bottom: 0px;
-    }
-}
 
 #blog-para {
     margin-top: 5px;
+    margin-bottom: 5px;
     font-size: 20px;
-    font-weight: 500;
+    font-weight: 400;
+    letter-spacing: 0.03rem;
+}
+
+@media (max-width: 768px) {
+    #blog-para {
+        font-size: 18px;
+    }
 }
 
 
-
 #headh1 {
-    font-family: 'Lora',serif;
+    font-family: 'Lora', serif;
     font-weight: 500;
     font-size: 30px;
     color: #4c4c4c;
     word-break: break-all;
 }
-
 
 
 #cat-items {
@@ -126,7 +118,6 @@ p {
     margin-bottom: 40px;
     box-shadow: rgba(0, 0, 0, 0.05) 0px 4px 8px 0px, rgba(0, 0, 0, 0.04) 0px 6px 20px 0px;
 }
-
 
 
 #seemore-arrow {
@@ -173,7 +164,6 @@ p {
 }
 
 
-
 #column-right {
     float: right;
 }
@@ -195,9 +185,10 @@ p {
 }
 
 
-#main-row{
+#main-row {
     margin-top: 40px;
 }
+
 #main-cont {
     min-height: 70vh;
 }
@@ -210,7 +201,7 @@ p {
 }
 
 #cat-section {
-padding: 30px 30px;
+    padding: 30px 30px;
 }
 
 @media (max-width: 460px) {
@@ -271,31 +262,36 @@ padding: 30px 30px;
     }
 }
 
+#blog-thumb-div {
+    padding: 0 0;
+    margin-right: -50px;
+}
+
+@media (max-width: 1200px) {
+    #blog-thumb-div {
+        margin-right: 0px;
+    }
+}
+
 #blog-thumbnail {
-    width: 200px;
-    height: 200px;
+    object-fit: cover;
+    width: 210px;
+    height: 210px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 576px) {
     #blog-thumbnail {
-        width: 180px;
-        height: 180px;
-        padding-top: 15px;
-    }
-}
-
-@media (max-width: 460px) {
-    #blog-thumbnail {
-        width: 100px;
-        height: 100px;
+        height: 200px;
+        width: auto;
     }
 }
 
 
-#article-cont{
+#article-cont {
     padding-left: 20px;
     padding-right: 20px;
 }
+
 #article-info {
     max-width: 720px;
     margin: auto;
@@ -313,21 +309,20 @@ padding: 30px 30px;
     font-family: Nunito, sans-serif;
     letter-spacing: .03rem;
     line-height: 2rem;
-    font-weight: 500;
+    font-weight: 400;
     font-style: normal;
 }
 
 @media (max-width: 460px) {
     #article-para p {
-font-size: 18px;
+        font-size: 18px;
     }
 }
+
 #article-para img {
     margin-top: 15px;
     margin-bottom: 25px;
 }
-
-
 
 
 #article-title {
@@ -375,10 +370,11 @@ font-size: 18px;
     }
 }
 
-#pagi li{
+#pagi li {
     font-family: Nunito, sans-serif;
 
 }
+
 #pagi {
     font-size: 18px;
     margin-top: 5px;
@@ -406,11 +402,9 @@ font-size: 18px;
 }
 
 
-
 #cat-litem-ink {
     font-size: 18px;
 }
-
 
 
 .blogpost-article p {
@@ -453,9 +447,6 @@ font-size: 18px;
         width: 100%;
     }
 }
-
-
-
 
 
 .cats {
@@ -561,8 +552,9 @@ font-size: 18px;
     box-shadow: 0 2px 2px 2px rgba(0, 0, 0, .15);
     margin-top: 80px;
 }
-#footer h3{
-margin-bottom: 0;
+
+#footer h3 {
+    margin-bottom: 0;
 }
 
 #icons {
@@ -582,21 +574,23 @@ margin-bottom: 0;
         font-size: 28px;
         line-height: 2.5rem;
     }
+
     #dash {
         width: 85px;
     }
 }
 
 
-#jobs{
-    font-family:'Nunito Sans', sans-serif;
-    font-size:16px;
-    color:rgb(88,88,88);
+#jobs {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 16px;
+    color: rgb(88, 88, 88);
     font-weight: 600;
     line-height: 1rem;
 }
-#jobs-cont{
-padding-right: 0;
+
+#jobs-cont {
+    padding-right: 0;
 }
 
 

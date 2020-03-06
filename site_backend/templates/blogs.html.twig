@@ -26,23 +26,38 @@ Tech, Science, Games are some of the things I fancy. Find {{ selectedCat }} blog
                     {% for  blog in blogs %}
                         <div class="row" id="blogs">
                             <div class="col" style="width:70%;">
-                                <div class="d-flex align-content-center" id="blog-sample-div"><img class="img-fluid"
-                                                                                                   src="{{ asset('assets/cover/') ~blog.id~".jpg" }}"
-                                                                                                   id="blog-thumbnail" alt="Cover Image">
-                                    <div id="demo-article" style="margin-left:0px;"><a
-                                                href="/blog/{{ blog.id }}-{{ blog.title | replace({' ':'-'})}}" id="blog-title"
-                                                style="font-family:Lora, serif;">{{ blog.title }}<br></a>
-                                        <p class="text-monospace" id="blog-para"
-                                           style="font-family:Nunito, sans-serif;color:#585858;">
-                                            {{ blog.article | striptags| slice(0,100) | raw}}...
-                                            <a href="/blog/{{ blog.id }}-{{ blog.title | replace({' ':'-'})}}"
-                                               style="padding-right:0px;">See
-                                                More<i class="fa fa-external-link" id="seemore-arrow"
-                                                       style="font-size:15px;"></i></a><br></p>
+                                <div class="d-flex align-content-center" id="blog-sample-div">
+
+                                    <div class="container">
+                                        <div class="row">
+
+                                            <div class="col-sm-4" id="blog-thumb-div">
+                                                <img class="img-fluid"
+                                                        {#        src="{{ asset('assets/cover/') ~blog.id~".jpg" }}"#}
+                                                     src="https://source.unsplash.com/random/1140x500/"
+                                                     id="blog-thumbnail"
+                                                     alt="Cover Image">
+                                            </div>
+                                            <div class="col-sm" id="demo-article" style="margin-left:0px;"><a
+                                                        href="/blog/{{ blog.id }}-{{ blog.title | replace({' ':'-'}) }}"
+                                                        id="blog-title"
+                                                        style="font-family:Lora, serif;">{{ blog.title }}<br></a>
+                                                <p class="text-monospace" id="blog-para"
+                                                   style="font-family:Nunito, sans-serif;color:#585858;">
+                                                    {{ blog.article | striptags| slice(0,100) | raw }}...
+                                                    <a href="/blog/{{ blog.id }}-{{ blog.title | replace({' ':'-'}) }}"
+                                                       style="padding-right:0px;">See
+                                                        More<i class="fa fa-external-link" id="seemore-arrow"
+                                                               style="font-size:15px;"></i></a><br></p>
+                                            </div>
+                                        </div>
                                     </div>
+
+
                                 </div>
                             </div>
                         </div>
+
 
                     {% endfor %}
                     <div>
