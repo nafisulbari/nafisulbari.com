@@ -4,7 +4,8 @@ namespace App\Repository;
 
 use App\Entity\Blogpost;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
-use Symfony\Bridge\Doctrine\RegistryInterface;
+use Doctrine\Persistence\ManagerRegistry;
+
 
 /**
  * @method Blogpost|null find($id, $lockMode = null, $lockVersion = null)
@@ -13,7 +14,7 @@ use Symfony\Bridge\Doctrine\RegistryInterface;
  * @method Blogpost[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
 class BlogpostRepository extends ServiceEntityRepository {
-    public function __construct(RegistryInterface $registry) {
+    public function __construct(ManagerRegistry $registry) {
         parent::__construct($registry, Blogpost::class);
     }
 
