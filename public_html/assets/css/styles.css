@@ -311,12 +311,14 @@ p {
 }
 
 #article-para p {
-    font-size: 21px;
     margin-top: 25px;
-    color: #4c4c4c;
+    font-size: 20px;
+    color: #585858;
     font-family: Nunito, sans-serif;
-    letter-spacing: .02rem;
-    font-weight: 400;
+    letter-spacing: .03rem;
+    line-height: 2rem;
+    font-weight: 500;
+    font-style: normal;
 }
 
 #article-para img {
@@ -351,6 +353,7 @@ p {
 #article-date {
     font-size: 18px;
     margin-top: 40px;
+    margin-bottom: 10px;
     color: #4c4c4c;
     font-family: Nunito, sans-serif;
     font-weight: 400;
