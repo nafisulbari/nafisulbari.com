@@ -1,21 +1,18 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}
-    <title> {{ blogpost.title }} - Nafisul Bari's Blog</title>
-{% endblock %}
+{% block title %}{{ blogpost.title }} - Nafisul Bari's Blog{% endblock %}
 
-{% block head %}
-    <meta name="author" content="Ahmed Nafisul Bari">
-    <meta name="keywords" content="{{ blogpost.title | replace({' ':','}) }}">
-    <meta name="description" content="{{ blogpost.article | striptags | slice(0,110) | raw }}">
+{% block keywords %}{{ blogpost.title | replace({' ':',','.':''}) | lower }}{% endblock %}
 
-{#    <link rel="canonical" href="https://blog.nafisulbari.com/blog/{{ blogpost.id }}-{{ blogpost.title | replace({' ':'-'})}}"/>#}
-{% endblock %}
+{% block description %}{{ blogpost.article | striptags| slice(0,140) | raw }}{% endblock %}
+
+{% block cano %}<link rel="canonical" href="https://nafisulbari.com/blog/{{ blogpost.id }}-{{ blogpost.title | replace({' ':'-','.':''}) | lower}}"/>{% endblock %}
 
     {% block search %}
-        <div class="form-group" id="search-bar"><label for="search-field" style="color:rgb(55,67,77);"><i class="fa fa-search" style="color:rgb(55,67,77);"></i></label><input class="form-control search-field" type="search" name="searchTerm" style="color:#1a1a1a;"></div>
+        <div class="form-group" id="search-bar"><label for="search-field" style="color:rgb(55,67,77);"><i
+                        class="fa fa-search" style="color:rgb(55,67,77);"></i></label><input
+                    class="form-control search-field" type="search" name="searchTerm" style="color:#1a1a1a;"></div>
     {% endblock %}
-
 
 {% block body %}
 
@@ -29,7 +26,8 @@
                             style="color:#4c4c4c;">{{ blogpost.title }}&nbsp;<br>
                         </h1>
                         <p id="article-date">
-                            <span id="icon-span" ico-cal=""><i class="fa fa-calendar-o d-inline" style="font-size:16px;"></i></span>&nbsp; {{ blogpost.dateCreated |date("d F Y") }}
+                            <span id="icon-span" ico-cal=""><i class="fa fa-calendar-o d-inline"
+                                                               style="font-size:16px;"></i></span>&nbsp; {{ blogpost.dateCreated |date("d F Y") }}
                         </p>
                         <h2 id="article-author"><span
                                     id="icon-span"><i class="fa fa-user-circle" style="font-size:16px;"></i></span>&nbsp;
@@ -37,7 +35,7 @@
                     </div>
                     <div id="cover2-div"><img alt="Blog Cover Image" class="img-fluid"
                                               src="https://source.unsplash.com/random/1140x450/"
-{#                                              src="{{ asset('assets/cover/') ~blogpost.id~".jpg" }}"#}
+                                {#                                              src="{{ asset('assets/cover/') ~blogpost.id~".jpg" }}"#}
                                               id="cover2" style="max-width:1140px;height:auto;"></div>
                     <div class="d-block blogpost-article" id="article">
 
@@ -52,6 +50,11 @@
 
     </div>
 
+    <footer id="footer">
+        <h3 class="text-center" id="footer-tag"
+            style="font-family:'Nunito Sans', sans-serif;color:rgb(88,88,88);font-size:16px;"><br>© 2020, Nafisul
+            Bari<br><br></h3>
+    </footer>
     <script>
 
         /**
@@ -76,11 +79,4 @@
 
     <script id="dsq-count-scr" src="//nafisulbari-com.disqus.com/count.js" async></script>
 
-
-
-
-
-    <footer id="footer">
-        <h3 class="text-center" id="footer-tag" style="font-family:'Nunito Sans', sans-serif;color:rgb(88,88,88);font-size:16px;"><br>© 2020, Nafisul Bari<br><br></h3>
-    </footer>
 {% endblock %}
