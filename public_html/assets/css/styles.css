@@ -130,6 +130,8 @@ p {
 }
 
 #cat-section {
+    margin-top:108px;
+    padding: 20px 22px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.03), 0 6px 20px 0 rgba(0, 0, 0, 0.04);
 }
 
@@ -194,11 +196,6 @@ p {
         padding: 25px;
 
     }
-}
-
-
-#cat-section {
-    padding: 30px 30px;
 }
 
 
@@ -463,6 +460,7 @@ p {
 
 .cats {
     margin-top: 15px;
+    margin-left: 8px;
 }
 
 
@@ -498,7 +496,7 @@ p {
 }
 
 #search-bar {
-    border-bottom: 1px solid #4c4c4c;
+    border-bottom: 1px solid #585858;
     margin-left: 18px;
     margin-right: 18px;
 }
@@ -534,9 +532,14 @@ p {
 
 #dash {
     height: 2px;
-    width: 120px;
-    background-color: black;
+    width: 110px;
+    background-color: #4c4c4c;
     position: fixed;
+}
+@media (max-width: 576px) {
+    #dash {
+        width: 78px;
+    }
 }
 
 #about-heading {
@@ -581,9 +584,6 @@ p {
         line-height: 2.5rem;
     }
 
-    #dash {
-        width: 85px;
-    }
 }
 
 
