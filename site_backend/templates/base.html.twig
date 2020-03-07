@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <meta charset="UTF-8">
+    <!-- Global site tag (gtag.js) - Google Analytics ------------->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-156684894-1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -11,18 +12,16 @@
         }
 
         gtag('js', new Date());
-
         gtag('config', 'UA-156684894-1');
     </script>
-    <meta charset="UTF-8">
+    <!-------------------------------------------------------------->
+    <title>{% block title %}{% endblock %}</title>
+
     {% block head %}
         <meta name="author" content="Ahmed Nafisul Bari">
-        <meta name="keywords" content="Ahmed Nafisul Bari, Nafisul Bari, Nafisul Bari Blog">
-        <meta name="description" content="Hi there, I am Ahmed Nafisul Bari. I am an occasional blog writer.
-Tech, Science, Games are some of the things I fancy.">
-
-
-
+        <meta name="keywords" content="{% block keywords %}{% endblock %}">
+        <meta name="description" content="{% block description %}{% endblock %}">
+        {% block cano %}{% endblock %}
     {% endblock %}
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,57 +29,47 @@ Tech, Science, Games are some of the things I fancy.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-{#    <link href="https://fonts.googleapis.com/css?family=Lora|Nunito+Sans:400,600&display=swap" rel="stylesheet">#}
+    <link href="https://fonts.googleapis.com/css?family=Lora|Nunito+Sans:400,600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('assets/css/Navigation-with-Search.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/styles.css') }}">
-    {% block stylesheets %}
-    {% endblock %}
 
-    {% block title %}
-        <title>Nafisul Bari's Blog</title>
-    {% endblock %}
+    {% block stylesheets %}{% endblock %}
 
-    {% block tinymce %}
-
-    {% endblock %}
-
-
+    {% block tinymce %}{% endblock %}
 </head>
 <body>
 
 
-<nav class="navbar navbar-light navbar-expand-md navigation-clean-search" id="nav-bar" style="background-color:rgb(255,255,255);">
+<nav class="navbar navbar-light navbar-expand-md navigation-clean-search" id="nav-bar"
+     style="background-color:rgb(255,255,255);">
     <div class="container" id="menu-mobile-cont">
-        <a class="navbar-brand" href="/" id="brand-nb" style="font-family:Lora, serif;color:rgb(76, 76, 76);font-size:16px;">NB</a>
+        <a class="navbar-brand" href="/" id="brand-nb"
+           style="font-family:Lora, serif;color:rgb(76, 76, 76);font-size:16px;">NB</a>
         <button class="navbar-toggler" id="menu-mobile" data-toggle="collapse" data-target="#navcol-1">
             <span class="sr-only">Toggle navigation</span>
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navcol-1">
 
-            <form class="form-inline ml-auto" style="font-family:'Nunito Sans', sans-serif;" target="_self" action="/blogs/search" method="GET">
-                {% block search %}
-
-                {% endblock %}
+            <form class="form-inline ml-auto" style="font-family:'Nunito Sans', sans-serif;" target="_self"
+                  action="/blogs/search" method="GET">
+                {% block search %}{% endblock %}
             </form>
 
             <ul class="nav navbar-nav ml-auto" id="nav-links" style="font-family:'Nunito Sans', sans-serif;">
-                <li class="nav-item" role="presentation"><a class="nav-link" href="/" style="color:rgb(88,88,88);">Home</a></li>
-                <li class="nav-item" role="presentation"><a class="nav-link" href="/about" style="color:rgb(88,88,88);">About</a></li>
-                <li class="nav-item" role="presentation"><a class="nav-link" href="/blog" style="color:rgb(88,88,88);">Blog</a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link" href="/"
+                                                            style="color:rgb(88,88,88);">Home</a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link" href="/about" style="color:rgb(88,88,88);">About</a>
+                </li>
+                <li class="nav-item" role="presentation"><a class="nav-link" href="/blog" style="color:rgb(88,88,88);">Blog</a>
+                </li>
             </ul>
         </div>
     </div>
 </nav>
 
 
-
-
 {% block body %}{% endblock %}
-
-
-
-
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.0/js/bootstrap.bundle.min.js"></script>
