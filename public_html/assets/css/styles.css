@@ -43,18 +43,13 @@ p {
 #blog-title {
     text-decoration: none;
     font-family: 'Lora', serif;
-    font-size: 30px;
+    font-size: 28px;
     font-weight: 500;
     color: #4c4c4c;
     letter-spacing: 0.03rem;
     line-height: 1.75rem;
 }
 
-@media (max-width: 768px) {
-    #blog-title {
-        font-size: 28px;
-    }
-}
 
 #blogs {
     margin-top: 40px;
