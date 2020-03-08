@@ -35,8 +35,6 @@ p {
         background-color: #ffffff;
         padding: 18px;
         margin: 12px 6px 6px 6px;
-        -webkit-box-shadow: 0px 0px 12px -3px rgba(0, 0, 0, 0.08);
-        -moz-box-shadow: 0px 0px 12px -3px rgba(0, 0, 0, 08);
         box-shadow: 0px 0px 12px -3px rgba(0, 0, 0, 0.08);
     }
 }
@@ -141,6 +139,22 @@ p {
     }
 }
 
+@media (max-width: 768px) {
+    #cat-section {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        padding-left: 20px;
+        box-sizing: border-box;
+        margin-left: -30px;
+    }
+}
+
+@media (max-width: 460px) {
+    #cat-section {
+        margin-bottom: 25px;
+    }
+}
+
 #search-ico {
     border-bottom: 1px solid white;
 }
@@ -199,21 +213,7 @@ p {
 }
 
 
-@media (max-width: 768px) {
-    #cat-section {
-        padding-top: 20px;
-        padding-bottom: 20px;
-        padding-left: 20px;
-        box-sizing: border-box;
-        margin-left: -30px;
-    }
-}
 
-@media (max-width: 460px) {
-    #cat-section {
-        margin-bottom: 25px;
-    }
-}
 
 
 #cat-col {
@@ -492,8 +492,6 @@ p {
     letter-spacing: .1rem;
 }
 
-#search-field {
-}
 
 #search-bar {
     border-bottom: 1px solid #585858;
@@ -516,6 +514,7 @@ p {
 
 #h1-intro {
     margin-bottom: 40px;
+    margin-left: 2px;
 }
 
 #h2-quote {
@@ -593,6 +592,7 @@ p {
     color: rgb(88, 88, 88);
     font-weight: 600;
     line-height: 1rem;
+    margin-left: 2px;
 }
 
 #jobs-cont {
