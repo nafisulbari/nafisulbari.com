@@ -53,9 +53,9 @@
                                                      id="blog-thumbnail"
                                                      alt="Cover Image">
                                             </div>
-                                            <div class="col-sm" id="demo-article"><a
+                                            <div class="col-sm" id="demo-article"><h3 id="blog-title-h3"><a
                                                         href="/blog/{{ blog.id }}-{{ blog.title | lower | replace({' ':'-','.':''}) }}"
-                                                        id="blog-title">{{ blog.title }}<br></a>
+                                                        id="blog-title">{{ blog.title }}</h3></a>
                                                 <p class="text-monospace" id="blog-para">
                                                     {{ blog.article | striptags| slice(0,100) | raw }}...<br>
                                                     <a id="seemore" href="/blog/{{ blog.id }}-{{ blog.title | lower | replace({' ':'-','.':''}) }}">See
