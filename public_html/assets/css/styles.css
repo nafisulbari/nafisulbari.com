@@ -4,6 +4,8 @@ body {
 }
 
 
+
+
 #blog-sample-div {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.03), 0 6px 20px 0 rgba(0, 0, 0, 0.04);
 }
@@ -319,10 +321,8 @@ p {
 }
 
 #article-para img {
-    margin-top: 20px;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.04), 0 6px 20px 0 rgba(0, 0, 0, 0.04);
-
 }
 
 
@@ -592,6 +592,10 @@ p {
 
 #jobs-cont {
     padding-right: 0;
+
 }
+
+
+
 
 
