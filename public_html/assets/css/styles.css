@@ -45,11 +45,16 @@ p {
 #blog-title {
     text-decoration: none;
     font-family: 'Lora', serif;
-    font-size: 28px;
+    font-size: 27px;
     font-weight: 500;
     color: #4c4c4c;
     letter-spacing: 0.03rem;
     line-height: 1.75rem;
+}
+@media (max-width: 768px) {
+    #blog-title {
+        font-size: 24px;
+    }
 }
 
 
@@ -65,14 +70,14 @@ p {
 
 #blog-para {
     margin-top: 5px;
-    margin-bottom: 5px;
+    margin-bottom: 0;
     font-family:Nunito, sans-serif;
-    font-size: 20px;
+    font-size: 19px;
     font-weight: 400;
     color:#585858;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
     #blog-para {
         font-size: 18px;
     }
@@ -165,20 +170,9 @@ p {
 }
 
 #demo-article {
-    padding: 20px 20px 20px 20px;
+    padding: 20px 20px;
 }
 
-@media (max-width: 768px) {
-    #demo-article {
-        padding: 10px 10px 10px 10px;
-    }
-}
-
-@media (max-width: 578px) {
-    #demo-article {
-        padding: 20px 20px 20px 20px;
-    }
-}
 
 
 @media (max-width: 768px) {
@@ -254,43 +248,26 @@ p {
 
 #blog-thumb-div {
     padding: 0 0;
-    margin-right: -40px;
 }
 
-@media (max-width: 1200px) {
-    #blog-thumb-div {
-        margin-right: 0px;
-    }
-}
 
-@media (max-width: 990px) {
-    #blog-thumb-div {
-        margin-right: -25px;
-    }
-}
-
-@media (max-width: 768px) {
-    #blog-thumb-div {
-        margin-right: 0px;
-    }
-}
 
 #blog-thumbnail {
     object-fit: cover;
-    width: 210px;
-    height: 210px;
+    height: 225px;
+    width: auto;
 }
 
 @media (max-width: 768px) {
     #blog-thumbnail {
-        height: 170px;
-        width: 170px;
+        height: 240px;
+        width: auto;
     }
 }
 
 @media (max-width: 576px) {
     #blog-thumbnail {
-        height: 210px;
+        height: 200px;
         width: auto;
     }
 }
