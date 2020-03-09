@@ -16,11 +16,13 @@
 
 
 {% block search %}
-        <div class="form-group" id="search-bar"><label for="search-field" style="color:rgb(55,67,77);"><i
-                        class="fa fa-search" style="color:rgb(55,67,77);"></i></label><input
-                    class="form-control search-field" type="search" name="searchTerm" style="color:#1a1a1a;"></div>
+        <div class="form-group" id="search-bar"><label for="search-field"><i
+                        class="fa fa-search"></i></label><input
+                    class="form-control search-field" type="search" name="searchTerm"></div>
 {% endblock %}
 
+
+{% block blogactive %}active{% endblock %}
 {% block body %}
 
 
@@ -30,12 +32,10 @@
             <div class="row no-gutters" id="main-row">
                 <div class="col-lg-8">
                     <div id="headh1-div">
-                        <h1 class="text-monospace text-uppercase" id="headh1"
-                            style="font-family:Lora, serif;color:#4c4c4c;">{{ selectedCat }}</h1>
+                        <h1 class="text-monospace text-uppercase" id="headh1">{{ selectedCat }}</h1>
                     </div>
                     {% if blogs is empty %}
-                        <p class="text-monospace" id="blog-para"
-                           style="font-family:Nunito, sans-serif;color:#585858;">No articles found</p>
+                        <p class="text-monospace" id="blog-para">No articles found</p>
                     {% endif %}
 
                     {% for  blog in blogs %}
@@ -55,15 +55,11 @@
                                             </div>
                                             <div class="col-sm" id="demo-article"><a
                                                         href="/blog/{{ blog.id }}-{{ blog.title | lower | replace({' ':'-','.':''}) }}"
-                                                        id="blog-title"
-                                                        style="font-family:Lora, serif;">{{ blog.title }}<br></a>
-                                                <p class="text-monospace" id="blog-para"
-                                                   style="font-family:Nunito, sans-serif;color:#585858;">
-                                                    {{ blog.article | striptags| slice(0,100) | raw }}...
-                                                    <a href="/blog/{{ blog.id }}-{{ blog.title | lower | replace({' ':'-','.':''}) }}"
-                                                       style="padding-right:0px;">See
-                                                        More<i class="fa fa-external-link" id="seemore-arrow"
-                                                               style="font-size:15px;"></i></a><br></p>
+                                                        id="blog-title">{{ blog.title }}<br></a>
+                                                <p class="text-monospace" id="blog-para">
+                                                    {{ blog.article | striptags| slice(0,100) | raw }}...<br>
+                                                    <a id="seemore" href="/blog/{{ blog.id }}-{{ blog.title | lower | replace({' ':'-','.':''}) }}">See
+                                                        More<i class="fa fa-external-link" id="seemore-arrow"></i></a><br></p>
                                             </div>
                                         </div>
                                     </div>
@@ -76,8 +72,7 @@
 
                     {% endfor %}
                     <div>
-                        <nav class="d-flex justify-content-center navigation" id="pagi"
-                             style="font-family:Lora, serif;margin-top:40px;">
+                        <nav class="d-flex justify-content-center navigation" id="pagi">
 
 
                             {{ knp_pagination_render(blogs) }}
@@ -91,17 +86,14 @@
                     <div class="row">
                         <div class="col" id="cat-col">
                             <div class="d-block" id="cat-section">
-                                <h2 class="text-uppercase" id="headh1" style="font-family:Lora, serif;font-size:25px;">
+                                <h2 class="text-uppercase" id="headh1">
                                     CATEGORIES</h2>
-                                <div class="cats" style="padding-left:10px;">
+                                <div class="cats">
 
                                     {% for  cat in cats %}
-                                        <div class="d-flex"
-                                             style="margin-bottom:5px;"><i class="fa fa-folder-open-o" id="cat-icon"
-                                                                           style="margin-right:10px;margin-left:0px;padding-right:0px;"></i><a
+                                        <div class="d-flex"><i class="fa fa-folder-open-o" id="cat-icon"></i><a
                                                     href="/category/{{ cat.id }}-{{ cat.name | replace({' ':'-'}) | lower }}"
-                                                    id="cat-litem-ink"
-                                                    style="font-family:Nunito, sans-serif;color:#585858;">{{ cat.name }}</a>
+                                                    id="cat-litem-ink">{{ cat.name }}</a>
                                         </div>
 
 
@@ -120,9 +112,7 @@
 
 
     <footer id="footer">
-        <h3 class="text-center" id="footer-tag"
-            style="font-family:'Nunito Sans', sans-serif;color:rgb(88,88,88);font-size:16px;"><br>© 2020, Nafisul
-            Bari<br><br></h3>
+        <h3 class="text-center" id="footer-tag">© 2020, Nafisul Bari</h3>
     </footer>
 {% endblock %}
 

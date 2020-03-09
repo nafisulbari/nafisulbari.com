@@ -9,9 +9,9 @@
 {% block cano %}<link rel="canonical" href="https://nafisulbari.com/blog/{{ blogpost.id }}-{{ blogpost.title | replace({' ':'-','.':''}) | lower}}"/>{% endblock %}
 
     {% block search %}
-        <div class="form-group" id="search-bar"><label for="search-field" style="color:rgb(55,67,77);"><i
-                        class="fa fa-search" style="color:rgb(55,67,77);"></i></label><input
-                    class="form-control search-field" type="search" name="searchTerm" style="color:#1a1a1a;"></div>
+        <div class="form-group" id="search-bar"><label for="search-field"><i
+                        class="fa fa-search"></i></label><input
+                    class="form-control search-field" type="search" name="searchTerm"></div>
     {% endblock %}
 
 {% block body %}
@@ -22,21 +22,19 @@
             <div class="row">
                 <div class="col-md-12" id="article-cont">
                     <div id="article-info">
-                        <h1 id="article-title"
-                            style="color:#4c4c4c;">{{ blogpost.title }}&nbsp;<br>
+                        <h1 id="article-title">{{ blogpost.title }}&nbsp;<br>
                         </h1>
                         <p id="article-date">
-                            <span id="icon-span" ico-cal=""><i class="fa fa-calendar-o d-inline"
-                                                               style="font-size:16px;"></i></span>&nbsp; {{ blogpost.dateCreated |date("d F Y") }}
+                            <span id="icon-span"><i class="fa fa-calendar-o d-inline"></i></span>&nbsp; {{ blogpost.dateCreated |date("d F Y") }}
                         </p>
                         <h2 id="article-author"><span
-                                    id="icon-span"><i class="fa fa-user-circle" style="font-size:16px;"></i></span>&nbsp;
+                                    id="icon-span"><i class="fa fa-user-circle"></i></span>&nbsp;
                             Ahmed Nafisul Bari</h2>
                     </div>
                     <div id="cover2-div"><img alt="Blog Cover Image" class="img-fluid"
                                               src="https://source.unsplash.com/random/1140x450/"
                                 {#                                              src="{{ asset('assets/cover/') ~blogpost.id~".jpg" }}"#}
-                                              id="cover2" style="max-width:1140px;height:auto;"></div>
+                                              id="cover2"></div>
                     <div class="d-block blogpost-article" id="article">
 
                         <div id="article-para">{{ blogpost.article| raw }}
@@ -51,9 +49,7 @@
     </div>
 
     <footer id="footer">
-        <h3 class="text-center" id="footer-tag"
-            style="font-family:'Nunito Sans', sans-serif;color:rgb(88,88,88);font-size:16px;"><br>© 2020, Nafisul
-            Bari<br><br></h3>
+        <h3 class="text-center" id="footer-tag">© 2020, Nafisul Bari</h3>
     </footer>
     <script>
 

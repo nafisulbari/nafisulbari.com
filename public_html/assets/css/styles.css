@@ -66,8 +66,10 @@ p {
 #blog-para {
     margin-top: 5px;
     margin-bottom: 5px;
+    font-family:Nunito, sans-serif;
     font-size: 20px;
     font-weight: 400;
+    color:#585858;
 }
 
 @media (max-width: 1024px) {
@@ -80,9 +82,8 @@ p {
 #headh1 {
     font-family: 'Lora', serif;
     font-weight: 500;
-    font-size: 35px;
+    font-size: 30px;
     color: #4c4c4c;
-    word-break: break-all;
 }
 
 
@@ -93,6 +94,7 @@ p {
 
 #search-field {
     border-bottom: 1px solid #fcfcfc;
+    color: #4c4c4c;
 }
 
 #cover2 {
@@ -104,18 +106,23 @@ p {
     box-shadow: rgba(0, 0, 0, 0.05) 0px 4px 8px 0px, rgba(0, 0, 0, 0.04) 0px 6px 20px 0px;
 }
 
-
+#seemore{
+    font-size: 18px;
+}
 #seemore-arrow {
     margin-left: 5px;
     position: relative;
     top: 1px;
+    font-size: 15px;
 }
 
 #cat-icon {
-    margin-left: 5px;
     position: relative;
     top: 5px;
     font-size: 16px;
+    margin-right:10px;
+    margin-left:0;
+    padding-right:0;
 }
 
 @media (max-width: 768px) {
@@ -154,6 +161,7 @@ p {
 
 #search-ico {
     border-bottom: 1px solid white;
+    color: #4c4c4c;
 }
 
 #demo-article {
@@ -332,7 +340,7 @@ p {
     text-decoration: none;
     font-family: 'Lora', serif;
     font-weight: 500;
-    color: #0b0b0b;
+    color: #4c4c4c;
     letter-spacing: .3px;
     line-height: 2.75rem;
 }
@@ -377,26 +385,32 @@ p {
         font-size: 16px;
     }
 }
-
-#pagi li {
-    font-family: Nunito, sans-serif;
-
+#icon-span i{
+    font-size: 16px;
 }
-
-#pagi {
-    font-size: 18px;
-    margin-top: 5px;
-    margin-bottom: 10px;
-}
-
 @media (max-width: 460px) {
-    #pagi {
-        font-size: 16px;
-
+    #icon-span i{
+        font-size: 15px;
     }
 }
 
+
+#pagi {
+    font-size: 16px;
+    margin-bottom: 10px;
+    font-family:Lora, serif;
+    margin-top:40px;"
+}
+#pagi li {
+    font-family: Nunito, sans-serif;
+    font-size: 16px;
+
+}
+
+
 #cover2-div {
+    max-width:1140px;
+    height:auto;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.04), 0 6px 20px 0 rgba(0, 0, 0, 0.04);
 }
 
@@ -407,6 +421,8 @@ p {
 
 
 #cat-litem-ink {
+    font-family:Nunito, sans-serif;
+    color:#585858;
     font-size: 18px;
 }
 
@@ -456,6 +472,7 @@ p {
 .cats {
     margin-top: 15px;
     margin-left: 8px;
+    padding-left: 10px;
 }
 
 
@@ -489,9 +506,10 @@ p {
 
 
 #search-bar {
-    border-bottom: 1px solid #585858;
+    border-bottom: 1px solid #4c4c4c;
     margin-left: 18px;
     margin-right: 18px;
+    color: #4c4c4c;
 }
 
 #hero-container {
@@ -502,22 +520,26 @@ p {
     margin-top: 20vh;
 }
 
-#socail-icon {
+#social-icon {
     margin-right: 20px;
     color: #4c4c4c;
+    font-size: 20px;
 }
 
 #h1-intro {
     margin-bottom: 40px;
     margin-left: 2px;
+    font-family:'Nunito Sans', sans-serif;
+    font-size:20px;
+    color:#585858;
 }
 
 #h2-quote {
+    font-family:Lora, serif;
     margin-bottom: 15px;
     font-size: 40px;
     line-height: 55px;
     color: #4c4c4c;
-
 }
 
 #soft-eng-bold {
@@ -553,10 +575,13 @@ p {
     height: 60px;
     box-shadow: 0 0 4px 0 rgba(0, 0, 0, .15);
     margin-top: 80px;
+    margin-bottom: 0;
 }
-
-
-#footer h3 {
+#footer-tag{
+    font-family:'Nunito Sans', sans-serif;
+    color:#4c4c4c;
+    font-size:16px;
+    padding: 20px 0;
     margin-bottom: 0;
 }
 
@@ -580,6 +605,9 @@ p {
 
 }
 
+#jobs-cont {
+    padding-right: 0;
+}
 
 #jobs {
     font-family: 'Nunito Sans', sans-serif;
@@ -590,9 +618,12 @@ p {
     margin-left: 2px;
 }
 
-#jobs-cont {
-    padding-right: 0;
-
+#jobs-link{
+    color: rgb(88, 88, 88);
+    text-decoration: none;
+}
+#jobs-link:hover{
+    text-decoration: underline;
 }
 
 
