@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ blogpost.title }} - Nafisul Bari's Blog{% endblock %}
+{% block title %}{{ blogpost.title }}{% endblock %}
 
 {% block keywords %}{{ blogpost.title | replace({' ':',','.':''}) | lower }}{% endblock %}
 

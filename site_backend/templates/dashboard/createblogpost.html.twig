@@ -62,14 +62,15 @@
 
         tinymce.init({
             selector: 'textarea',
-            plugins: 'image code',
-            toolbar: 'bold italic underline strikethrough ' +
+            plugins: 'image code link lists anchor',
+            menubar: 'insert',
+            toolbar: 'bold italic underline strikethrough link numlist bullist' +
                 'alignleft aligncenter alignright alignjustify styleselect ' +
                 'bullist numlist outdent indent ' +
-                'undo redo removeformat subscript superscript | image code',
+                'undo redo removeformat subscript superscript anchor | image code',
+            default_link_target: "_blank",
             images_upload_credentials: true,
             images_upload_base_path: '',
-
             relative_urls: false,
             convert_urls: false,
             remove_script_host : false,
