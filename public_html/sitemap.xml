@@ -2,44 +2,50 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://nafisulbari.com/</loc>
-    <lastmod>2020-03-09</lastmod>
+    <lastmod>2020-03-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://nafisulbari.com/blog</loc>
-    <lastmod>2020-03-09</lastmod>
+    <lastmod>2020-03-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://nafisulbari.com/about</loc>
+    <lastmod>2020-03-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+    <url>
+    <loc>https://nafisulbari.com/blog/11-minecraft-automatic-fish-farm-for-food</loc>
+    <lastmod>2020-03-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://nafisulbari.com/blog/13-deploy-symfony-app-in-cpanel's-public_html-directory</loc>
+    <lastmod>2020-03-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://nafisulbari.com/blog/14-host-a-springboot-app-with-database-free-on-heroku</loc>
+    <lastmod>2020-03-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://nafisulbari.com/category/4-minecraft</loc>
-    <lastmod>2020-03-09</lastmod>
+    <lastmod>2020-03-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://nafisulbari.com/about</loc>
-    <lastmod>2020-03-09</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://nafisulbari.com/blog/11-minecraft-automatic-fish-farm-for-food</loc>
-    <lastmod>2020-03-09</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://nafisulbari.com/category/5-deployment</loc>
-    <lastmod>2020-03-09</lastmod>
+    <lastmod>2020-03-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://nafisulbari.com/blog/13-deploy-symfony-app-in-cpanel's-public_html-directory</loc>
-    <lastmod>2020-03-09</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.9</priority>
   </url>
 </urlset>
