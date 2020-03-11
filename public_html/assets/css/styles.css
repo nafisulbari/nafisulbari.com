@@ -4,7 +4,6 @@ body {
 }
 
 
-
 #blog-sample-div {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.03), 0 6px 20px 0 rgba(0, 0, 0, 0.04);
 }
@@ -50,15 +49,17 @@ p {
     letter-spacing: 0.03rem;
     line-height: 1.75rem;
 }
+
 @media (max-width: 768px) {
     #blog-title {
         font-size: 24px;
     }
 }
 
-#blog-title-h3{
+#blog-title-h3 {
     margin: 0;
 }
+
 #blogs {
     margin-top: 40px;
 }
@@ -72,10 +73,10 @@ p {
 #blog-para {
     margin-top: 5px;
     margin-bottom: 0;
-    font-family:Nunito, sans-serif;
+    font-family: Nunito, sans-serif;
     font-size: 19px;
     font-weight: 400;
-    color:#585858;
+    color: #585858;
 }
 
 @media (max-width: 768px) {
@@ -91,7 +92,8 @@ p {
     font-size: 30px;
     color: #4c4c4c;
 }
-#headh1-cat{
+
+#headh1-cat {
     font-family: 'Lora', serif;
     font-weight: 500;
     font-size: 22px;
@@ -117,9 +119,10 @@ p {
     box-shadow: rgba(0, 0, 0, 0.05) 0px 4px 8px 0px, rgba(0, 0, 0, 0.04) 0px 6px 20px 0px;
 }
 
-#seemore{
+#seemore {
     font-size: 18px;
 }
+
 #seemore-arrow {
     margin-left: 5px;
     position: relative;
@@ -131,9 +134,9 @@ p {
     position: relative;
     top: 5px;
     font-size: 16px;
-    margin-right:10px;
-    margin-left:0;
-    padding-right:0;
+    margin-right: 10px;
+    margin-left: 0;
+    padding-right: 0;
 }
 
 @media (max-width: 768px) {
@@ -143,7 +146,7 @@ p {
 }
 
 #cat-section {
-    margin-top:103px;
+    margin-top: 103px;
     padding: 20px 22px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.03), 0 6px 20px 0 rgba(0, 0, 0, 0.04);
 }
@@ -178,17 +181,18 @@ p {
 #demo-article {
     padding: 20px 20px;
 }
+
 @media (max-width: 768px) {
     #demo-article {
         padding: 14px 14px;
     }
 }
+
 @media (max-width: 576px) {
     #demo-article {
         padding: 20px 20px;
     }
 }
-
 
 
 @media (max-width: 768px) {
@@ -228,9 +232,6 @@ p {
 }
 
 
-
-
-
 #cat-col {
     padding-left: 15px;
     margin-top: 15px;
@@ -265,7 +266,6 @@ p {
 #blog-thumb-div {
     padding: 0 0;
 }
-
 
 
 #blog-thumbnail {
@@ -378,11 +378,13 @@ p {
         font-size: 16px;
     }
 }
-#icon-span i{
+
+#icon-span i {
     font-size: 16px;
 }
+
 @media (max-width: 460px) {
-    #icon-span i{
+    #icon-span i {
         font-size: 15px;
     }
 }
@@ -391,9 +393,11 @@ p {
 #pagi {
     font-size: 16px;
     margin-bottom: 10px;
-    font-family:Lora, serif;
-    margin-top:40px;"
+    font-family: Lora, serif;
+    margin-top: 40px;
+"
 }
+
 #pagi li {
     font-family: Nunito, sans-serif;
     font-size: 16px;
@@ -402,8 +406,8 @@ p {
 
 
 #cover2-div {
-    max-width:1140px;
-    height:auto;
+    max-width: 1140px;
+    height: auto;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.04), 0 6px 20px 0 rgba(0, 0, 0, 0.04);
 }
 
@@ -414,8 +418,8 @@ p {
 
 
 #cat-litem-ink {
-    font-family:Nunito, sans-serif;
-    color:#585858;
+    font-family: Nunito, sans-serif;
+    color: #585858;
     font-size: 18px;
 }
 
@@ -504,13 +508,15 @@ p {
     color: #4c4c4c;
     transform: scale(0.7);
 }
+
 @media (max-width: 990px) {
     #search-bar {
         transform: scale(0.85);
         margin-bottom: 10px;
     }
 }
-#search-bar i{
+
+#search-bar i {
     font-size: 20px;
 }
 
@@ -523,21 +529,25 @@ p {
 }
 
 #social-icon {
-    margin-right: 20px;
+    margin: 0;
     color: #4c4c4c;
     font-size: 20px;
+}
+
+#social-icon-link {
+    margin-right: 20px;
 }
 
 #h1-intro {
     margin-bottom: 40px;
     margin-left: 2px;
-    font-family:'Nunito Sans', sans-serif;
-    font-size:20px;
-    color:#585858;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 20px;
+    color: #585858;
 }
 
 #h2-quote {
-    font-family:Lora, serif;
+    font-family: Lora, serif;
     margin-bottom: 15px;
     font-size: 40px;
     line-height: 55px;
@@ -554,6 +564,7 @@ p {
     background-color: #4c4c4c;
     position: fixed;
 }
+
 @media (max-width: 576px) {
     #dash {
         width: 78px;
@@ -579,10 +590,11 @@ p {
     margin-top: 80px;
     margin-bottom: 0;
 }
-#footer-tag{
-    font-family:'Nunito Sans', sans-serif;
-    color:#4c4c4c;
-    font-size:16px;
+
+#footer-tag {
+    font-family: 'Nunito Sans', sans-serif;
+    color: #4c4c4c;
+    font-size: 16px;
     padding: 20px 0;
     margin-bottom: 0;
 }
@@ -620,11 +632,12 @@ p {
     margin-left: 2px;
 }
 
-#jobs-link{
+#jobs-link {
     color: rgb(88, 88, 88);
     text-decoration: none;
 }
-#jobs-link:hover{
+
+#jobs-link:hover {
     text-decoration: underline;
 }
 
