@@ -17,11 +17,10 @@ class DashboardController extends AbstractController {
         $cats = $repository->findAll();
 
 
-
         $repository = $this->getDoctrine()->getRepository(Blogpost::class);
         $myblogs = $repository->findBy(
             array(),
-            array('id' => 'ASC')
+            array('id' => 'DESC')
 
         );
         $myblogs = $paginator->paginate(

@@ -1,7 +1,9 @@
 {% extends 'base.html.twig' %}
-
-{% block title %} DashboardBlogController!{% endblock %}
-
+    {% block logoutbtn %}
+        <li class="nav-item" role="presentation">
+            <a class="nav-link" style="color: red" href="{{ path('logout') }}">Logout</a>
+        </li>
+    {% endblock %}
 {% block body %}
     <style>
         .example-wrapper {

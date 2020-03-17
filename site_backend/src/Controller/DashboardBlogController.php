@@ -23,8 +23,12 @@ class DashboardBlogController extends AbstractController {
 
         $blogs = $allBlogsOfCatQuerry->getResult();
 
+        $cat = $this->getDoctrine()
+            ->getRepository(Category::class)
+            ->find($id);
+        $category=$cat->getName();
 
-        return $this->render('dashboard/blog.html.twig', ['blogs' => $blogs]);
+        return $this->render('dashboard/blog.html.twig', ['blogs' => $blogs, 'category' =>$category]);
     }
 
 

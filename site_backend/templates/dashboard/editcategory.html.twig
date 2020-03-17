@@ -1,5 +1,9 @@
 {% extends 'base.html.twig' %}
-
+    {% block logoutbtn %}
+        <li class="nav-item" role="presentation">
+            <a class="nav-link" style="color: red" href="{{ path('logout') }}">Logout</a>
+        </li>
+    {% endblock %}
 
 {% block body %}
 
