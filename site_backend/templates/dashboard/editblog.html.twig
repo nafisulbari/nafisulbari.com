@@ -55,15 +55,15 @@
                             <input type="radio" name="category_id" value="{{ cat.id }}"
                                     {% if blogpost.category.id == cat.id %}
                             checked
-                                    {% endif %}>
+                                    {% endif %} required>
                             {{ cat.name }}
                         {% endfor %}
                         <br>
                         <br>
                         Title: <br>
-                        <input class="form-control" type="text" name="title" value="{{ blogpost.title }}"> <br>
+                        <input class="form-control" type="text" name="title" value="{{ blogpost.title }}" required> <br>
                         Date Created: <br>
-                        <input class="form-control" type="date" name="dateCreated" value="{{ blogpost.dateCreated }}"> <br>
+                        <input class="form-control" type="date" name="dateCreated" value="{{ blogpost.dateCreated }}" required> <br>
 
                         <button class="btn btn-primary btn-block" type="submit">SAVE</button>
                         <textarea class="form-control" style="min-height: 720px" name="article">{{ blogpost.article|raw }}</textarea>

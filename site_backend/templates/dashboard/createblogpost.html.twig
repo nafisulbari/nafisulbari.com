@@ -50,16 +50,16 @@
                         Category:
                         {% for cat in cats %}
 
-                            <input type="radio" name="category_id" value="{{ cat.id }}">
+                            <input type="radio" name="category_id" value="{{ cat.id }}" required>
                             {{ cat.name }}
 
                         {% endfor %}
                         <br>
                         <br>
                         Title: <br>
-                        <input class="form-control" type="text" name="title" value=""> <br>
+                        <input class="form-control" type="text" name="title" value="" required> <br>
                         Date Created: <br>
-                        <input class="form-control" type="date" name="dateCreated" value=""> <br>
+                        <input class="form-control" type="date" name="dateCreated" value="" required> <br>
 
                         <button class="btn btn-primary btn-block" type="submit">SAVE</button>
                         <textarea class="form-control" style="min-height: 720px" name="article"></textarea>
