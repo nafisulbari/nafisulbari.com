@@ -1,61 +1,92 @@
-{% extends 'base.html.twig'%}
-
+{% extends 'base.html.twig' %}
+    {% block logoutbtn %}
+        <li class="nav-item" role="presentation">
+            <a class="nav-link" style="color: red" href="{{ path('logout') }}">Logout</a>
+        </li>
+    {% endblock %}
 {% block body %}
-    <a href="{{ path('logout') }}">Logout</a>
-
-    <a href="/dashboard/createblogpost">Create Post</a>
-
-<br>
 
 
-    <a href="/dashboard/category">Category Section</a>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="row dashboard" id="blogs">
+                    <button class="btn btn-secondary btn-block"><a style="color: white; text-decoration: none" href="/dashboard/category">Category</a></button>
+                </div>
+                <div class="row dashboard">
+                    <button class="btn btn-secondary btn-block"><a style="color: white; text-decoration: none" href="/dashboard/createblogpost">Create Post</a></button>
 
-
-    <h2>Blogs with Categories</h2>
-    <ul>
-        {% for  cat in cats %}
-            <li><a href="/dashboard/category/blog/{{ cat.id }}">{{ cat.name }}</a></li>
-
-
-
-        {% endfor %}
-
-        {% for  blog in blogs %}
-            <div class="row" id="blogs">
-                <div class="col" style="width:70%;">
-                    <div class="d-flex align-content-center" id="blog-sample-div"><img class="img-fluid"
-                                                                                       src="{{ asset('assets/cover/') ~blog.id~".jpg" }}"
-                                                                                       id="blog-thumbnail">
-                        <div id="demo-article" style="margin-left:0px;"><a
-                                    href="/blog/{{ blog.id }}_{{ blog.title | replace({' ':'-'})}}" id="blog-title"
-                                    style="font-family:Lora, serif;">{{ blog.title }}<br></a>
-                            <p class="text-monospace" id="blog-para"
-                               style="font-family:Nunito, sans-serif;color:#585858;">
-                                {{ blog.article | slice(0,110) | raw }}... <br>
-                                <a href="/dashboard/category/blog/post/edit/{{ blog.id }}"
-                                   style="padding-right:0px;">EDIT<i class="fa fa-external-link" id="seemore-arrow"
-                                           style="font-size:15px;"></i></a><br></p>
-
-                            <button class="btn btn-danger"><a href="/dashboard/category/blog/post/delete/{{ blog.id }}" onclick="return confirm('Are you sure you want to delete this blog?');">delete</a></button>
-
-                        </div>
-                    </div>
                 </div>
             </div>
+            <div class="col-lg-9">
+                {% for  blog in blogs %}
+                    <div class="row" id="blogs">
+                        <div class="col">
+                            <div class="d-flex align-content-center" id="blog-sample-div">
 
-        {% endfor %}
-        <div>
-            <nav class="d-flex justify-content-center navigation" id="pagi"
-                 style="font-family:Lora, serif;margin-top:40px;">
+                                <div class="container">
+                                    <div class="row">
+
+                                        <div class="col-sm-4" id="blog-thumb-div">
+                                            <img class="img-fluid"
+                                                    {#        src="{{ asset('assets/cover/') ~blog.id~".jpg" }}"#}
+                                                 src="https://source.unsplash.com/random/1140x400/"
+                                                 id="blog-thumbnail"
+                                                 alt="Cover Image">
+                                        </div>
+                                        <div class="col-sm" id="demo-article"><h3 id="blog-title-h3"><a
+                                                        href="/blog/{{ blog.id }}-{{ blog.title | lower | replace({' ':'-','.':''}) }}"
+                                                        id="blog-title">{{ blog.title }}</h3></a>
+                                            <p class="text-monospace" id="blog-para">
+                                                {{ blog.article | striptags| slice(0,100) | raw }}...<br>
+                                                <a href="/dashboard/category/blog/post/edit/{{ blog.id }}"
+                                                   style="padding-right:0px;">EDIT<i class="fa fa-external-link"
+                                                                                     id="seemore-arrow"
+                                                                                     style="font-size:15px;"></i></a><br>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
 
 
-                <ul class="pagination">
-                    {{ knp_pagination_render(blogs) }}
-                </ul>
+                            </div>
+                        </div>
+                    </div>
 
 
-            </nav>
+                    <button class="btn btn-danger"><a href="/dashboard/category/blog/post/delete/{{ blog.id }}"
+                                                      onclick="return confirm('Are you sure you want to delete this blog?');">delete</a>
+                    </button>
+
+
+                {% endfor %}
+
+            </div>
         </div>
-        </div>
+    </div>
+
+
+    <br>
+
+
+
+
+
+
+
+
+    <div>
+        <nav class="d-flex justify-content-center navigation" id="pagi"
+             style="font-family:Lora, serif;margin-top:40px;">
+
+
+            <ul class="pagination">
+                {{ knp_pagination_render(blogs) }}
+            </ul>
+
+
+        </nav>
+    </div>
+    </div>
     </ul>
 {% endblock %}
