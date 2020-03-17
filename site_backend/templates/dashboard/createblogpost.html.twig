@@ -1,60 +1,7 @@
 {% extends 'base.html.twig' %}
 
 
-
-
-{% block body %}
-    <style>
-        .example-wrapper {
-            margin: 1em auto;
-            width: 720px;
-            font: 21px/1.5 sans-serif;
-        }
-
-        .example-wrapper code {
-            background: #F5F5F5;
-            padding: 2px 6px;
-        }
-    </style>
-
-    <div class="example-wrapper">
-<p>Cover Image should be 1140x400</p>
-<p>artile images should be 720p wide</p>
-
-
-
-        <form action="/dashboard/createblogpost/save" method="GET">
-
-
-            Category:<br>
-            {% for cat in cats %}
-
-                <input type="radio" name="category_id" value="{{ cat.id }}">
-                {{ cat.name }}
-
-            {% endfor %}
-
-
-            Title:
-            <input type="text" name="title" value=""> <br>
-            Date Created:
-            <input type="date" name="dateCreated" value=""> <br>
-
-            <textarea name="article"></textarea>
-
-            <input type="submit" value="SAVE">
-        </form>
-
-
-    </div>
-
-
-
-
-
-
-
-
+{% block tinymce %}
     <script src="https://cdn.tiny.cloud/1/0mfdsilngywfygs9tbl0b40723kmi9tidztyrtr534whm93a/tinymce/5/tinymce.min.js">
 
     </script>
@@ -78,5 +25,52 @@
             images_upload_url: '/dashboard/category/blog/post/edit/upload'
         });
     </script>
+{% endblock %}
+
+{% block body %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="row dashboard" id="blogs">
+                    <button class="btn btn-secondary btn-block"><a style="color: white; text-decoration: none"
+                                                                   href="/dashboard">Dashboard</a></button>
+                </div>
+                <div class="row dashboard">
+                    <button class="btn btn-secondary btn-block"><a style="color: white; text-decoration: none"
+                                                                   href="/dashboard/category">Category</a></button>
+                </div>
+            </div>
+            <div class="col-lg-9">
+                <div class="row" id="blogs">
+                    <p>Cover Image should be 1140x400, Article images width can be 720p max.</p>
+
+                    <form action="/dashboard/createblogpost/save" method="GET">
+
+                        Category:
+                        {% for cat in cats %}
+
+                            <input type="radio" name="category_id" value="{{ cat.id }}">
+                            {{ cat.name }}
+
+                        {% endfor %}
+                        <br>
+                        <br>
+                        Title: <br>
+                        <input class="form-control" type="text" name="title" value=""> <br>
+                        Date Created: <br>
+                        <input class="form-control" type="date" name="dateCreated" value=""> <br>
+
+                        <button class="btn btn-primary btn-block" type="submit">SAVE</button>
+                        <textarea class="form-control" style="min-height: 720px" name="article"></textarea>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <br><br><br>
+
 
 {% endblock %}
+

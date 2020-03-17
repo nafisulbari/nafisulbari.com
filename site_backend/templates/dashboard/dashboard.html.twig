@@ -36,15 +36,15 @@
                                                  id="blog-thumbnail"
                                                  alt="Cover Image">
                                         </div>
-                                        <div class="col-sm" id="demo-article"><h3 id="blog-title-h3"><a
+                                        <div class="col-sm" id="demo-article"><h3 id="blog-title-h3"><a target="_blank"
                                                         href="/blog/{{ blog.id }}-{{ blog.title | lower | replace({' ':'-','.':''}) }}"
                                                         id="blog-title">{{ blog.title }}</h3></a>
                                             <p class="text-monospace" id="blog-para">
                                                 {{ blog.article | striptags| slice(0,100) | raw }}...<br>
                                                 <a href="/dashboard/category/blog/post/edit/{{ blog.id }}"
-                                                   style="padding-right:0px;">EDIT<i class="fa fa-external-link"
-                                                                                     id="seemore-arrow"
-                                                                                     style="font-size:15px;"></i></a><br>
+                                                   style="padding-right:0px; color: #ff8000">EDIT<i class="fa fa-pencil-square-o"
+                                                                                                    id="seemore-arrow"
+                                                                                                    style="font-size:18px;"></i></a><br>
                                             </p>
                                         </div>
                                     </div>
@@ -55,40 +55,18 @@
                         </div>
                     </div>
 
-
-                    <button class="btn btn-danger"><a href="/dashboard/category/blog/post/delete/{{ blog.id }}"
-                                                      onclick="return confirm('Are you sure you want to delete this blog?');">delete</a>
-                    </button>
-
-
                 {% endfor %}
-
+                <div>
+                    <nav class="d-flex justify-content-center navigation" id="pagi"
+                         style="font-family:Lora, serif;margin-top:40px;">
+                        <ul class="pagination">
+                            {{ knp_pagination_render(blogs) }}
+                        </ul>
+                    </nav>
+                </div>
             </div>
         </div>
     </div>
 
 
-    <br>
-
-
-
-
-
-
-
-
-    <div>
-        <nav class="d-flex justify-content-center navigation" id="pagi"
-             style="font-family:Lora, serif;margin-top:40px;">
-
-
-            <ul class="pagination">
-                {{ knp_pagination_render(blogs) }}
-            </ul>
-
-
-        </nav>
-    </div>
-    </div>
-    </ul>
 {% endblock %}
