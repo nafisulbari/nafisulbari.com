@@ -1,4 +1,7 @@
 Sitemap: https://nafisulbari.com/sitemap.xml
+
 User-agent: *
+Allow: /*
+
 Disallow: /login
-Disallow: /dashboard
+Disallow: /dashboard/*
