@@ -668,7 +668,12 @@ p {
     line-height: 55px;
     color: #4c4c4c;
 }
-
+@media (max-width: 768px) {
+    #h2-quote {
+        font-size: 30px;
+        line-height: 2.5rem;
+    }
+}
 #soft-eng-bold {
     font-weight: 900;
 }
@@ -702,7 +707,7 @@ p {
 #footer {
     min-height: 60px;
     box-shadow: 0 0 4px 0 rgba(0, 0, 0, .15);
-    margin-top: 80px;
+    margin-top: 90px;
     margin-bottom: 0;
     padding: 20px 0;
 
@@ -734,12 +739,7 @@ p {
     margin-left: 2px;
 }
 
-@media (max-width: 576px) {
-    #h2-quote {
-        font-size: 30px;
-        line-height: 2.5rem;
-    }
-}
+
 
 @media (max-width: 576px) {
     #about-heading {
@@ -751,19 +751,20 @@ p {
 
 #jobs-cont {
     padding-right: 0;
+    padding-left: 0;
 }
 
 #jobs {
     font-family: 'Nunito Sans', sans-serif;
     font-size: 16px;
-    color: rgb(88, 88, 88);
+    color: rgb(0, 0, 0);
     font-weight: 600;
     line-height: 1rem;
     margin-left: 2px;
 }
 
 #jobs-link {
-    color: rgb(88, 88, 88);
+    color: rgb(0, 0, 0);
     text-decoration: none;
 }
 
@@ -771,9 +772,87 @@ p {
     text-decoration: underline;
 }
 
+#project-words{
+    margin-top: 12vh;
+    margin-bottom: 30px;
+    padding-left: 0;
+}
+
+#project-title{
+    text-decoration: none;
+    font-family: 'Lora', serif;
+    font-size: 27px;
+    font-weight: 500;
+    color: #4c4c4c;
+    letter-spacing: 0.03rem;
+    line-height: 1.75rem;
+    margin-bottom: 20px;
+}
+#project-para{
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 0;
+}
+
+#project-image-row{
+    margin-bottom: 40px;
+}
 
 
+#project-image-div{
+    height: 300px;
+    width: 100%;
+}
 
+#project-image{
+    object-fit: cover;
+    height: 300px;
+    width: auto;
+}
+
+@media (max-width: 1200px) {
+    #project-image-row{
+        margin-bottom: 0;
+    }
+    #project-image{
+        height: 250px;
+    }
+}
+@media (max-width: 990px) {
+    #project-image-row{
+        margin-bottom: 0;
+    }
+    #project-image-div{
+        margin-bottom: 40px;
+    }
+    #project-image{
+        height: 300px;
+    }
+}
+@media (max-width: 768px) {
+    #project-image-row{
+        margin-bottom: 0;
+    }
+    #project-image-div{
+        margin-bottom: 40px;
+    }
+    #project-image{
+
+    }
+}
+@media (max-width: 576px) {
+    #project-image-div{
+        margin-bottom: 0;
+    }
+    #project-image{
+        height: 250px;
+        width: 100%;
+    }
+}
+
+#project-showcase{
+    margin-bottom: 40px;
+}
 
 /**********************DASHBOARD*****************************/
 .dashboard{
