@@ -7,7 +7,16 @@
 {% block description %}Blog of Ahmed Nafisul Bari.
     An occasional blog writer.
     Tech, Science, Computer Programming, Games are some of the blogs that are found here. {{ selectedCat }}{% endblock %}
-
+{% block metarobot %}index,follow{% endblock %}
+{% block ogmetatags %}
+     <meta property="og:type" content="website">
+     <meta property="og:title" content="{{ selectedCat }} - Nafisul Bari's Blog">
+     <meta property="og:url" content="https://nafisulbari.com/blog">
+     <meta property="og:description" content="Blog of Ahmed Nafisul Bari.
+    An occasional blog writer.
+    Tech, Science, Computer Programming, Games are some of the blogs that are found here. {{ selectedCat }}">
+     <meta property="og:site_name" content="Nafisul Bari's Blog">
+{% endblock %}
 {% block cano %}
 {% if selectedCat == "Featured Blogs" %}
 <link rel="canonical" href="https://nafisulbari.com/blog"/>
@@ -112,7 +121,21 @@
 
 
     <footer id="footer">
-        <h3 class="text-center" id="footer-tag">© 2020, Nafisul Bari</h3>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 d-flex justify-content-center justify-content-sm-start">
+                    <div class=" " id="footer-icons">
+                        <a id="footer-icon-link" href="https://www.facebook.com/nafisulbari1" target="_blank"><i class="fa fa-facebook-square" id="social-icon"></i></a>
+                        <a id="footer-icon-link" href="https://www.instagram.com/r47ul" target="_blank"><i class="fa fa-instagram" id="social-icon"></i></a>
+                        <a id="footer-icon-link" href="https://www.linkedin.com/in/ahmed-nafisul-bari-651b23ab" target="_blank"><i class="fa fa-linkedin-square" id="social-icon"></i></a>
+                        <a id="footer-icon-link" href="https://github.com/nafisulbari" target="_blank"><i class="fa fa-github" id="social-icon"></i></a>
+                    </div>
+                </div>
+                <div class="col-sm-6 d-flex justify-content-center justify-content-sm-end">
+                    <h3 class="" id="footer-tag">© 2020, Nafisul Bari</h3>
+                </div>
+            </div>
+        </div>
     </footer>
 {% endblock %}
 

@@ -6,6 +6,18 @@
 
 {% block description %}{{ blogpost.article | striptags| slice(0,140) | raw }}{% endblock %}
 
+{% block metarobot %}index,follow{% endblock %}
+
+ {% block ogmetatags %}
+     <meta property="og:type" content="article">
+     <meta property="og:title" content="{{ blogpost.title }}">
+     <meta property="og:url" content="https://nafisulbari.com/blog/{{ blogpost.id }}-{{ blogpost.title | replace({' ':'-','.':''}) | lower}}">
+     <meta property="og:image" content="https://nafisulbari.com/assets/cover/{{ blogpost.id }}.jpg">
+     <meta property="og:description" content="{{ blogpost.article | striptags| slice(0,140) | raw }}">
+     <meta property="article:publisher" content="https://www.facebook.com/nafisulbari1">
+     <meta property="og:site_name" content="Nafisul Bari's Blog">
+ {% endblock %}
+
 {% block cano %}<link rel="canonical" href="https://nafisulbari.com/blog/{{ blogpost.id }}-{{ blogpost.title | replace({' ':'-','.':''}) | lower}}"/>{% endblock %}
 
     {% block search %}
@@ -49,7 +61,21 @@
     </div>
 
     <footer id="footer">
-        <h3 class="text-center" id="footer-tag">© 2020, Nafisul Bari</h3>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 d-flex justify-content-center justify-content-sm-start">
+                    <div class=" " id="footer-icons">
+                        <a id="footer-icon-link" href="https://www.facebook.com/nafisulbari1" target="_blank"><i class="fa fa-facebook-square" id="social-icon"></i></a>
+                        <a id="footer-icon-link" href="https://www.instagram.com/r47ul" target="_blank"><i class="fa fa-instagram" id="social-icon"></i></a>
+                        <a id="footer-icon-link" href="https://www.linkedin.com/in/ahmed-nafisul-bari-651b23ab" target="_blank"><i class="fa fa-linkedin-square" id="social-icon"></i></a>
+                        <a id="footer-icon-link" href="https://github.com/nafisulbari" target="_blank"><i class="fa fa-github" id="social-icon"></i></a>
+                    </div>
+                </div>
+                <div class="col-sm-6 d-flex justify-content-center justify-content-sm-end">
+                    <h3 class="" id="footer-tag">© 2020, Nafisul Bari</h3>
+                </div>
+            </div>
+        </div>
     </footer>
     <script>
 
