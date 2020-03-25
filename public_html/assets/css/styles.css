@@ -804,7 +804,7 @@ p {
     width: 100%;
 }
 
-#project-image{
+#project-video{
     object-fit: cover;
     height: 300px;
     width: auto;
@@ -814,7 +814,7 @@ p {
     #project-image-row{
         margin-bottom: 0;
     }
-    #project-image{
+    #project-video{
         height: 250px;
     }
 }
@@ -825,7 +825,7 @@ p {
     #project-image-div{
         margin-bottom: 40px;
     }
-    #project-image{
+    #project-video{
         height: 300px;
     }
 }
@@ -836,7 +836,7 @@ p {
     #project-image-div{
         margin-bottom: 40px;
     }
-    #project-image{
+    #project-video{
 
     }
 }
@@ -844,7 +844,7 @@ p {
     #project-image-div{
         margin-bottom: 0;
     }
-    #project-image{
+    #project-video{
         height: 250px;
         width: 100%;
     }
