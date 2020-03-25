@@ -420,12 +420,11 @@ p {
 }
 
 #article-para p {
-    margin-top: 25px;
     font-size: 20px;
     color: #585858;
     font-family: Nunito, sans-serif;
     letter-spacing: .03rem;
-    line-height: 2rem;
+    line-height: 1.8rem;
     font-weight: 400;
     font-style: normal;
 }
@@ -440,6 +439,16 @@ p {
     margin-bottom: 15px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.04), 0 6px 20px 0 rgba(0, 0, 0, 0.04);
 }
+
+#article-para code {
+    border-left: 5px solid #969696;
+    padding: 15px;
+    background-color: #f7f4f4;
+    display: inline-block;
+    min-height: 50px;
+    width: 100%;
+}
+
 
 
 #article-title {
