@@ -815,7 +815,8 @@ p {
 #project-video{
     object-fit: cover;
     height: 300px;
-    width: auto;
+    width: 100%;
+
 }
 
 @media (max-width: 1200px) {
