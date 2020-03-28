@@ -836,6 +836,7 @@ p {
     }
     #project-video{
         height: 300px;
+        width: auto;
     }
 }
 @media (max-width: 768px) {
@@ -855,6 +856,15 @@ p {
     }
     #project-video{
         height: 250px;
+        width: 100%;
+    }
+}
+@media (max-width: 460px) {
+    #project-image-div{
+        margin-bottom: 0;
+    }
+    #project-video{
+        height: 210px;
         width: 100%;
     }
 }
