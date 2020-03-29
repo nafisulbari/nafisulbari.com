@@ -48,7 +48,7 @@
                 <div class="row" id="blogs">
                     <p>Cover Image should be 1140x400, Article images width can be 720p max.</p>
 
-                    <form action="/dashboard/category/blog/post/edit/save/{{ blogpost.id }}" method="GET">
+                    <form action="/dashboard/category/blog/post/edit/save/{{ blogpost.id }}" method="POST">
                         <p>ID: {{ blogpost.id }} &nbsp; &nbsp;
                             <button class="btn btn-danger"><a style="text-decoration: none; color: white" href="/dashboard/category/blog/post/delete/{{ blogpost.id }}"
                             onclick="return confirm('Are you sure you want to delete this blog?');">Delete Post</a>

@@ -69,10 +69,11 @@ class DashboardBlogController extends AbstractController {
 
     public function editSaveButton($id, Request $request){
 
-        $title = $request->query->get('title');
-        $category_id = $request->query->get('category_id');
-        $dateCreated = $request->query->get('dateCreated');
-        $article = $request->query->get('article');
+
+        $title = $request->get('title');
+        $category_id = $request->get('category_id');
+        $dateCreated = $request->get('dateCreated');
+        $article = $request->get('article');
 
         $blogpost= $this->getDoctrine()
             ->getRepository(Blogpost::class)

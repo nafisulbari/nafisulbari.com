@@ -26,7 +26,7 @@ class DashboardCategoryController extends AbstractController {
     }
 
     public function categorySaveButton(Request $request){
-        $categoryName = $request->query->get('categoryName');
+        $categoryName = $request->get('categoryName');
 
         $entityManager = $this->getDoctrine()->getManager();
         $category = new Category();
@@ -54,7 +54,7 @@ class DashboardCategoryController extends AbstractController {
 
     public function editSaveButton(Request $request, $id){
 
-        $categoryName = $request->query->get('categoryName');
+        $categoryName = $request->get('categoryName');
 
         $category= $this->getDoctrine()
             ->getRepository(Category::class)

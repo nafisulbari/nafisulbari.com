@@ -29,7 +29,7 @@
 
                 <h2>Edit Category Name</h2>
                 <br>
-                <form action="/dashboard/category/edit/save/{{ cat.id }}" method="GET">
+                <form action="/dashboard/category/edit/save/{{ cat.id }}" method="POST">
                     Category Name:
                     <input class="form-control" type="text" name="categoryName"value="{{ cat.name }}" required>
                     <br>
