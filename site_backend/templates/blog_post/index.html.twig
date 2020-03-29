@@ -52,9 +52,9 @@
                                     id="icon-span"><i class="fa fa-user-circle"></i></span>&nbsp;
                             Ahmed Nafisul Bari</p>
                     </div>
-                    <div id="cover2-div"><img alt="Blog Cover Image" class="img-fluid"
+                    <div id="cover2-div"><img alt="{{blogpost.title}} cover image" class="img-fluid"
                                               src="https://source.unsplash.com/random/1140x400/"
-                                {#                                              src="{{ asset('assets/cover/') ~blogpost.id~".jpg" }}"#}
+                {#    src="{{ asset('assets/cover/') }}{{ blogpost.id }}-{{ blogpost.title | replace({' ':'-'}) | lower }}.jpg"  #}
                                               id="cover2"></div>
                     <div class="d-block blogpost-article" id="article">
 

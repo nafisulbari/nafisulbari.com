@@ -9,26 +9,26 @@
     Tech, Science, Computer Programming, Games are some of the blogs that are found here. {{ selectedCat }}{% endblock %}
 {% block metarobot %}index,follow{% endblock %}
 {% block ogmetatags %}
-     <meta property="og:type" content="website">
-     <meta property="og:title" content="{{ selectedCat }} - Nafisul Bari's Blog">
-     <meta property="og:url" content="https://nafisulbari.com/blog">
-     <meta property="og:description" content="Blog of Ahmed Nafisul Bari.
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{ selectedCat }} - Nafisul Bari's Blog">
+    <meta property="og:url" content="https://nafisulbari.com/blog">
+    <meta property="og:description" content="Blog of Ahmed Nafisul Bari.
     An occasional blog writer.
     Tech, Science, Computer Programming, Games are some of the blogs that are found here. {{ selectedCat }}">
-     <meta property="og:site_name" content="Nafisul Bari's Blog">
+    <meta property="og:site_name" content="Nafisul Bari's Blog">
 {% endblock %}
 {% block cano %}
-{% if selectedCat == "Featured Blogs" %}
-<link rel="canonical" href="https://nafisulbari.com/blog"/>
-{% endif %}
+    {% if selectedCat == "Featured Blogs" %}
+        <link rel="canonical" href="https://nafisulbari.com/blog"/>
+    {% endif %}
 
 {% endblock %}
 
 
 {% block search %}
-        <div class="form-group" id="search-bar"><label for="search-field"><i
-                        class="fa fa-search"></i></label><input
-                    class="form-control search-field" type="search" name="searchTerm"></div>
+    <div class="form-group" id="search-bar"><label for="search-field"><i
+                    class="fa fa-search"></i></label><input
+                class="form-control search-field" type="search" name="searchTerm"></div>
 {% endblock %}
 
 
@@ -58,18 +58,20 @@
 
                                             <div class="col-sm-4" id="blog-thumb-div">
                                                 <img class="img-fluid"
-                                                        {#        src="{{ asset('assets/cover/') ~blog.id~".jpg" }}"#}
+                                                        {#     src="{{ asset('assets/cover/') }}{{ blogpost.id }}-{{ blogpost.title | replace({' ':'-'}) | lower }}.jpg"    #}
                                                      src="https://source.unsplash.com/random/1140x400/"
                                                      id="blog-thumbnail"
-                                                     alt="Cover Image">
+                                                     alt="{{ blog.title }} image">
                                             </div>
                                             <div class="col-sm" id="demo-article"><h3 id="blog-title-h3"><a
-                                                        href="/blog/{{ blog.id }}-{{ blog.title | lower | replace({' ':'-','.':''}) }}"
-                                                        id="blog-title">{{ blog.title }}</h3></a>
+                                                            href="/blog/{{ blog.id }}-{{ blog.title | lower | replace({' ':'-','.':''}) }}"
+                                                            id="blog-title">{{ blog.title }}</h3></a>
                                                 <p class="text-monospace" id="blog-para">
                                                     {{ blog.article | striptags| slice(0,100) | raw }}...<br>
-                                                    <a id="seemore" href="/blog/{{ blog.id }}-{{ blog.title | lower | replace({' ':'-','.':''}) }}">See
-                                                        More<i class="fa fa-external-link" id="seemore-arrow"></i></a><br></p>
+                                                    <a id="seemore"
+                                                       href="/blog/{{ blog.id }}-{{ blog.title | lower | replace({' ':'-','.':''}) }}">See
+                                                        More<i class="fa fa-external-link"
+                                                               id="seemore-arrow"></i></a><br></p>
                                             </div>
                                         </div>
                                     </div>
@@ -126,10 +128,15 @@
             <div class="row">
                 <div class="col-sm-6 d-flex justify-content-center justify-content-sm-start">
                     <div class=" " id="footer-icons">
-                        <a id="footer-icon-link" href="https://www.facebook.com/nafisulbari1" target="_blank" rel="noopener noreferrer"><i class="fa fa-facebook-square" id="social-icon"></i></a>
-                        <a id="footer-icon-link" href="https://www.instagram.com/r47ul" target="_blank" rel="noopener noreferrer"><i class="fa fa-instagram" id="social-icon"></i></a>
-                        <a id="footer-icon-link" href="https://www.linkedin.com/in/ahmed-nafisul-bari-651b23ab" target="_blank" rel="noopener noreferrer"><i class="fa fa-linkedin-square" id="social-icon"></i></a>
-                        <a id="footer-icon-link" href="https://github.com/nafisulbari" target="_blank" rel="noopener noreferrer"><i class="fa fa-github" id="social-icon"></i></a>
+                        <a id="footer-icon-link" href="https://www.facebook.com/nafisulbari1" target="_blank"
+                           rel="noopener noreferrer"><i class="fa fa-facebook-square" id="social-icon"></i></a>
+                        <a id="footer-icon-link" href="https://www.instagram.com/r47ul" target="_blank"
+                           rel="noopener noreferrer"><i class="fa fa-instagram" id="social-icon"></i></a>
+                        <a id="footer-icon-link" href="https://www.linkedin.com/in/ahmed-nafisul-bari-651b23ab"
+                           target="_blank" rel="noopener noreferrer"><i class="fa fa-linkedin-square"
+                                                                        id="social-icon"></i></a>
+                        <a id="footer-icon-link" href="https://github.com/nafisulbari" target="_blank"
+                           rel="noopener noreferrer"><i class="fa fa-github" id="social-icon"></i></a>
                     </div>
                 </div>
                 <div class="col-sm-6 d-flex justify-content-center justify-content-sm-end">

@@ -109,6 +109,10 @@ dashboard_blog_edit_save:
   path: /dashboard/category/blog/post/edit/save/{id}
   controller: App\Controller\DashboardBlogController::editSaveButton
 
+dashboard_cover_save:
+    path: /dashboard/createblogpost/cover/save/{id}/{title}
+    controller: App\Controller\DashboardBlogController::coverImageSaveButton
+
 
 #-----------------IMAGE UPLOAD-------------------
 dashboard_blog_image_upload:

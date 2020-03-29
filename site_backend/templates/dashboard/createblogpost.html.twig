@@ -47,21 +47,17 @@
             </div>
             <div class="col-lg-9">
                 <div class="row" id="blogs">
-                    <p>Cover Image should be 1140x400, Article images width can be 720p max.</p>
 
                     <form action="/dashboard/createblogpost/save" method="GET">
-
-                        Category:
-                        {% for cat in cats %}
-
-                            <input type="radio" name="category_id" value="{{ cat.id }}" required>
-                            {{ cat.name }}
-
-                        {% endfor %}
-                        <br>
-                        <br>
                         Title: <br>
                         <input class="form-control" type="text" name="title" value="" required> <br>
+                        Category:
+                        <select class="form-control" name="category_id" required>
+                            {% for cat in cats %}
+                                <option value="{{ cat.id }}">{{ cat.name }}</option>
+                            {% endfor %}
+                        </select>
+                        <br>
                         Date Created: <br>
                         <input class="form-control" type="date" name="dateCreated" value="" required> <br>
 

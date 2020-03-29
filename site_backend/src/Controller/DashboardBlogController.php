@@ -1,10 +1,12 @@
 <?php
+
 namespace App\Controller;
 
 
 use App\Entity\Blogpost;
 use App\Entity\Category;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -26,9 +28,9 @@ class DashboardBlogController extends AbstractController {
         $cat = $this->getDoctrine()
             ->getRepository(Category::class)
             ->find($id);
-        $category=$cat->getName();
+        $category = $cat->getName();
 
-        return $this->render('dashboard/blog.html.twig', ['blogs' => $blogs, 'category' =>$category]);
+        return $this->render('dashboard/blog.html.twig', ['blogs' => $blogs, 'category' => $category]);
     }
 
 
@@ -47,7 +49,7 @@ class DashboardBlogController extends AbstractController {
         return $this->render('/dashboard/blogpost.html.twig', ['blogpost' => $blogpost]);
     }
 
-    public function editBlog($id, Request $request){
+    public function editBlog($id, Request $request) {
         $blogpost = $this->getDoctrine()
             ->getRepository(Blogpost::class)
             ->find($id);
@@ -62,12 +64,10 @@ class DashboardBlogController extends AbstractController {
         $cats = $repository->findAll();
 
 
-
-
-        return $this->render('/dashboard/editblog.html.twig', ['blogpost' => $blogpost, 'cats'=>$cats]);
+        return $this->render('/dashboard/editblog.html.twig', ['blogpost' => $blogpost, 'cats' => $cats]);
     }
 
-    public function editSaveButton($id, Request $request){
+    public function editSaveButton($id, Request $request) {
 
 
         $title = $request->get('title');
@@ -75,7 +75,7 @@ class DashboardBlogController extends AbstractController {
         $dateCreated = $request->get('dateCreated');
         $article = $request->get('article');
 
-        $blogpost= $this->getDoctrine()
+        $blogpost = $this->getDoctrine()
             ->getRepository(Blogpost::class)
             ->find($id);
 
@@ -96,18 +96,18 @@ class DashboardBlogController extends AbstractController {
         $repository = $this->getDoctrine()->getRepository(Category::class);
         $cats = $repository->findAll();
 
-        return $this->render('/dashboard/editblog.html.twig', ['blogpost' => $blogpost, 'cats'=>$cats]);
+        return $this->render('/dashboard/editblog.html.twig', ['blogpost' => $blogpost, 'cats' => $cats]);
 
     }
 
 
-    public function createBlogPost(){
+    public function createBlogPost() {
 
         $repository = $this->getDoctrine()->getRepository(Category::class);
         $cats = $repository->findAll();
 
 
-        return $this->render('/dashboard/createblogpost.html.twig', ['cats'=>$cats]);
+        return $this->render('/dashboard/createblogpost.html.twig', ['cats' => $cats]);
     }
 
     public function createBlogPostSaveButton(Request $request) {
@@ -132,16 +132,15 @@ class DashboardBlogController extends AbstractController {
 
         $entityManager->flush();
 
-        $redirectPath = '/dashboard/category/blog/post/edit/'.$blogpost->getId();
+        $redirectPath = '/dashboard/category/blog/post/edit/' . $blogpost->getId();
 
-        return $this->redirect($redirectPath,201,sleep(3));
-
+        return $this->redirect($redirectPath, 201, sleep(3));
 
 
     }
 
 
-    public function deleteBlogpost($id){
+    public function deleteBlogpost($id) {
 
         $entityManager = $this->getDoctrine()->getManager();
         $blogpost = $this->getDoctrine()->getRepository(Blogpost::class)->find($id);
@@ -151,13 +150,24 @@ class DashboardBlogController extends AbstractController {
         $entityManager->remove($blogpost);
         $entityManager->flush();
 
-        $redirectURL = '/dashboard/category/blog/'.$blogCat->getId();
+        $redirectURL = '/dashboard/category/blog/' . $blogCat->getId();
         return $this->redirect($redirectURL);
 
     }
 
 
+    public function coverImageSaveButton(Request $request, $id, $title) {
 
+
+        $file = $request->files->get('file');
+        $dir = $request->server->get('DOCUMENT_ROOT') . '/assets/cover';
+
+        $fileName = $id . '-' . str_replace(' ', '-', $title) . '.' . 'jpg';
+        $file->move($dir, $fileName);
+
+
+        return $this->redirect("/dashboard/category/blog/post/edit/" . $id);
+    }
 
 
 }
