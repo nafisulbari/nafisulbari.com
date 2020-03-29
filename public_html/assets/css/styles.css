@@ -688,12 +688,6 @@ p {
     font-weight: 900;
 }
 
-#dash {
-    height: 2px;
-    width: 120px;
-    background-color: #4c4c4c;
-    position: fixed;
-}
 
 @media (max-width: 576px) {
     #dash {
@@ -712,11 +706,33 @@ p {
     font-weight: 500;
 }
 
+@media (max-width: 576px) {
+    #about-heading {
+        font-size: 28px;
+        line-height: 2.5rem;
+    }
+
+}
+
+#underline {
+    text-decoration: none;
+    border-bottom: 2px solid #4c4c4c;
+}
+
 #about-desc {
     margin-top: 40px;
-    margin-bottom: 30px;
+    margin-bottom: 35px;
     font-size: 20px;
     font-weight: 500;
+    line-height: 1.8rem;
+
+}
+
+@media (max-width: 576px) {
+    #about-desc {
+        font-size: 18px;
+
+    }
 
 }
 
@@ -771,14 +787,6 @@ p {
 }
 
 
-@media (max-width: 576px) {
-    #about-heading {
-        font-size: 28px;
-        line-height: 2.5rem;
-    }
-
-}
-
 #jobs-cont {
     padding-right: 0;
     padding-left: 0;
@@ -826,6 +834,9 @@ p {
     margin-bottom: 0;
 }
 
+#project-showcase {
+    margin-bottom: 40px;
+}
 
 #project-image-div {
     padding: 20px 20px 20px 16px;
@@ -913,10 +924,6 @@ p {
         width: 100%;
 
     }
-}
-
-#project-showcase {
-    margin-bottom: 40px;
 }
 
 
