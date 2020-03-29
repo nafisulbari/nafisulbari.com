@@ -20,7 +20,7 @@ class DashboardImageUploadController extends AbstractController {
         $file = $request->files->get('file');
         $dir = $request->server->get('DOCUMENT_ROOT') . '/assets/images';
 
-        $fileName = $title .'-'. $date .'-'. substr(md5($file->getClientOriginalName()), 0, 5) . '.' . $file->guessExtension();
+        $fileName = str_replace(' ','-',$title) .'-'. $date .'-'. substr(md5($file->getClientOriginalName()), 0, 5) . '.' . $file->guessExtension();
         $file->move($dir, $fileName);
 
         $response = new JsonResponse();
