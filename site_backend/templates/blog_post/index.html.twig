@@ -2,7 +2,9 @@
 
 {% block title %}{{ blogpost.title }}{% endblock %}
 
-{% block keywords %}{{ blogpost.title | replace({' ':',','.':''}) | lower }}{% endblock %}
+{% block keywords %}{{ blogpost.title |
+replace({'a ':'','.':'','on ':'','with ':'','in ':'','for ':'','the ':'','is ':'','are ':'','an ':'','so ':'',' ':','}) |
+lower }}{% endblock %}
 
 {% block description %}{{ blogpost.article | striptags| slice(0,140) | raw }}{% endblock %}
 
