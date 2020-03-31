@@ -14,7 +14,7 @@ lower }}{% endblock %}
      <meta property="og:type" content="article">
      <meta property="og:title" content="{{ blogpost.title }}">
      <meta property="og:url" content="https://nafisulbari.com/blog/{{ blogpost.id }}-{{ blogpost.title | replace({' ':'-','.':''}) | lower}}">
-     <meta property="og:image" content="{{ asset('assets/cover/') }}{{ blogpost.id }}-{{ blogpost.title | replace({' ':'-'}) | lower }}.jpg">
+     <meta property="og:image" content="https://nafisulbari.com{{ asset('assets/cover/') }}{{ blogpost.id }}-{{ blogpost.title | replace({' ':'-'}) | lower }}.jpg">
      <meta property="og:description" content="{{ blogpost.article | striptags | slice(0,140) | raw }}">
      <meta property="article:publisher" content="https://www.facebook.com/nafisulbari1">
      <meta property="og:site_name" content="Nafisul Bari's Blog">
