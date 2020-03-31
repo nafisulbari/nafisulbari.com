@@ -118,6 +118,31 @@ body {
     font-family: Nunito, sans-serif;
 }
 
+h2 {
+    font-size: 28px;
+    margin: 1rem 0;
+    font-weight: 400;
+    color: #4c4c4c;
+    font-family: Lora, serif
+}
+
+h3 {
+    font-size: 25px;
+    margin: 1rem 0;
+    font-weight: 400;
+    color: #4c4c4c;
+    font-family: Lora, serif
+}
+
+@media (max-width: 460px) {
+    h2 {
+        font-size: 25px;
+    }
+
+    h3 {
+        font-size: 21px;
+    }
+}
 
 #blog-sample-div {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.03), 0 6px 20px 0 rgba(0, 0, 0, 0.04);
@@ -761,6 +786,7 @@ p {
     font-family: 'Nunito Sans', sans-serif;
     color: #4c4c4c;
     font-size: 16px;
+    margin: 0;
 }
 
 #footer-icons {
@@ -799,6 +825,8 @@ p {
     font-weight: 600;
     line-height: 1rem;
     margin-left: 2px;
+    margin-bottom: 8px;
+    margin-top: 0;
 }
 
 #jobs-link {
@@ -926,13 +954,18 @@ p {
     }
 }
 
+code {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
 
 /**********************DASHBOARD*****************************/
 .dashboard {
     margin-bottom: 10px;
     margin-right: 20px;
 }
-#dash-cover{
+
+#dash-cover {
     object-fit: cover;
     max-height: 250px;
     width: auto;

@@ -17,6 +17,11 @@
 <priority>0.7</priority>
 </url>
 <url>
+  <loc>https://nafisulbari.com/blog/15-symfony-image-upload</loc>
+<changefreq>daily</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
   <loc>https://nafisulbari.com/blog/14-host-a-springboot-app-with-database-free-on-heroku</loc>
 <changefreq>daily</changefreq>
 <priority>0.7</priority>
