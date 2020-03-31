@@ -12,6 +12,7 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="{{ selectedCat }} - Nafisul Bari's Blog">
     <meta property="og:url" content="https://nafisulbari.com/blog">
+    <meta property="og:image" content="{{ asset('assets/android-chrome-192x192.png') }}">
     <meta property="og:description" content="Blog of Ahmed Nafisul Bari.
     An occasional blog writer.
     Tech, Science, Computer Programming, Games are some of the blogs that are found here. {{ selectedCat }}">
@@ -58,8 +59,8 @@
 
                                             <div class="col-sm-4" id="blog-thumb-div">
                                                 <img class="img-fluid"
-                                                        {#      src="{{ asset('assets/cover/') }}{{ blog.id }}-{{ blog.title | replace({' ':'-'}) | lower }}.jpg"    #}
                                                      src="https://source.unsplash.com/random/1140x400/"
+                                                        {#      src="{{ asset('assets/cover/') }}{{ blog.id }}-{{ blog.title | replace({' ':'-'}) | lower }}.jpg"    #}
                                                      id="blog-thumbnail"
                                                      alt="{{ blog.title }} image">
                                             </div>
